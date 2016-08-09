@@ -1,5 +1,7 @@
-@import './common/util';
-@import './common/reset';
+@import '../common/util';
+@import '../common/reset';
+@import '../common/theme';
+@import '../common/class';
 
 $menu-width: 220px;
 
@@ -58,6 +60,11 @@ body {
 			&.active {
 				color: $yellow;
 			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
 		}
 	}
 }
@@ -66,12 +73,4 @@ body {
 	flex: 1;
 	background-color: $bg-color;
 	padding: 20px;
-
-	.title {
-		color: $blue;
-	}
-
-	.sub-title {
-		color: $dark-blue;
-	}
 }

@@ -1,0 +1,58 @@
+/*
+ * 文本类
+ */
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.text-nowrap {
+	white-space: nowrap;
+}
+
+.text-ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/*
+ * 浮动
+ */
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+/*
+ * 组件类
+ */
+.component {
+	position: relative;
+	display: inline-block;
+}
+
+.input-group {
+	margin: 10px 0;
+	display: block;
+
+	>label {
+		font-size: 14px;
+		display: block;
+		color: $masstone;
+	}
+}

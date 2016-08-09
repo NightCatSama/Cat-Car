@@ -2,6 +2,7 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
+    csscomb = require('gulp-csscomb'),
     notify = require('gulp-notify'),
     rename = require('gulp-rename'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -11,12 +12,13 @@ var gulp = require('gulp'),
     babel = require('gulp-babel'),
     concat = require('gulp-concat'),
     plumber = require('gulp-plumber'),
+    clean = require('gulp-clean'),
 	browserSync = require('browser-sync').create();
 
 var reload = browserSync.reload;
 
 // 静态服务器
-gulp.task('browser-sync', ['sass', 'scripts'], function() {
+gulp.task('browser-sync', ['sass', 'scripts', 'images'], function() {
     browserSync.init({
         server: {
             baseDir: "./"
@@ -25,13 +27,14 @@ gulp.task('browser-sync', ['sass', 'scripts'], function() {
 
     gulp.watch("src/styles/**/*.scss", ['sass']);
     gulp.watch("src/javascripts/**/*.js", ['scripts']);
+    gulp.watch("src/images/**/*.png", ['images']);
     gulp.watch("**/*.html").on("change", reload);
     gulp.watch("dist/stylesheets/*.css").on("change", reload);
 });
 
 // 样式处理
 gulp.task('sass', function() {
-    return gulp.src('src/styles/*.scss')
+    return gulp.src('src/styles/**/*.scss')
     .pipe(plumber({
         errorHandler: function(error){
             this.emit('end');
@@ -55,6 +58,8 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.write())
     //添加前缀
     .pipe(autoprefixer([">5%"]))
+    //css排序
+    .pipe(csscomb())
     //保存未压缩文件到我们指定的目录下面
     .pipe(gulp.dest('dist/stylesheets'))
     //给文件添加.min后缀
@@ -64,12 +69,12 @@ gulp.task('sass', function() {
     //输出压缩文件到指定目录
     .pipe(gulp.dest('dist/stylesheets'))
     // .pipe(notify({ message: 'sass编译成功！' }))
-    // .pipe(reload({stream: true}))
+    .pipe(reload({stream: true}))
 });
 
 // Scripts任务
 gulp.task('scripts', function() {
-    return gulp.src('src/javascripts/*.js')
+    return gulp.src('src/javascripts/**/*.js')
     .pipe(plumber({
         errorHandler: function(error){
             this.emit('end');
@@ -106,10 +111,11 @@ gulp.task('images', function() {
     .pipe(notify({ message: '图片压缩完成！' }));
 });
 
+// 清空图片、样式、js
+gulp.task('clean', function() {
+    gulp.src(['./dist/stylesheets', './dist/javascripts', './dist/images'], {read: false})
+        .pipe(clean());
+});
+
 //  gulp默认开启调试工作
 gulp.task('default', ['browser-sync']);
-
-//  gulp执行优化操作
-gulp.task('seo', ['images'], function() {
-	// notify({ message: 'SEO OK'})
-});

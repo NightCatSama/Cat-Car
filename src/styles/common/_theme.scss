@@ -1,0 +1,31 @@
+@import './util';
+
+$colors: (red: $red, blue: $blue, yellow: $yellow, green: $green, black: $black, white: $white, pink: $pink, orange: $orange, gray: $gray);
+
+@each $name, $color in $colors {
+    .#{$name} {
+        color: $color!important;
+    }
+    .bg-#{$name} {
+        background-color: $color!important;
+    }
+    .theme-#{$name} {
+        background-color: $color!important;
+        color: $white!important;
+        &:hover {
+            background-color: lighten($color, 10%)!important;
+        }
+        &:active {
+            background-color: darken($color, 10%)!important;
+        }
+    }
+    .btn-#{$name} {
+        background-color: $color!important;
+        &:hover {
+            background-color: lighten($color, 5%)!important;
+        }
+        &:active {
+            background-color: darken($color, 5%)!important;
+        }
+    }
+}
