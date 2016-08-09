@@ -1,0 +1,198 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 15px 0 10px 0;
+}
+
+a,
+a:hover,
+a:active,
+a:focus,
+input,
+input:hover,
+input:active,
+input:focus {
+    outline: none;
+}
+
+button,
+button:active,
+button:focus,
+button:hover {
+    outline: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    font-family: "Segoe UI", 'Microsoft Yahei', Helvetica, Arial;
+    color: $font-color;
+}
+
+a {
+    color: $blue;
+}
+
+blockquote {
+    padding-left: 20px;
+    margin: .5em 0;
+    position: relative;
+    border-left: 4px solid $blue;
+}
+
+small {
+    color: $gray;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+button,
+[role='button'] {
+    padding: 10px 15px;
+    display: inline-block;
+    border: none;
+    background-color: $dark-default;
+    border-radius: 5px;
+    color: $white;
+    transition: background-color .2s;
+    &:hover {
+        background-color: $default;
+    }
+    &:active {
+        box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, .56);
+    }
+    &.green-btn {
+        background-color: $dark-green;
+        &:hover {
+            background-color: $green;
+        }
+    }
+    &.blue-btn {
+        background-color: $dark-blue;
+        &:hover {
+            background-color: $blue;
+        }
+    }
+}
+
+label {
+    font-weight: bold;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+input, select, textarea {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid $default;
+    outline: none;
+    background-color: $white;
+    width: 220px;
+    @include placeholder($default);
+    font-family: Helvetica;
+
+    &:-webkit-autofill {
+	    -webkit-box-shadow: 0 0 0px 1000px $white inset;
+	}
+
+    &:focus {
+    	border-color: $blue;
+    }
+}
+
+textarea {
+	width: 350px;
+	resize: none;
+}
+
+.input-group {
+	margin: 10px 0;
+	display: block;
+
+	>label {
+		font-size: 14px;
+		display: block;
+		color: $masstone;
+	}
+}
+
+input[type="radio"], input[type="checkbox"] {
+	width: 20px;
+}
+
+
+table {
+	background-color: $white;
+	border-collapse: collapse;
+	font-family: 'Microsoft Yahei';
+	border-radius: 5px;
+	box-shadow: 0 0 5px 1px rgba(0,0,0,.26);
+	overflow: hidden;
+
+	tr {
+		text-align: left;
+
+		&:hover {
+			background-color: lighten($light-blue, 20%)!important;
+		}
+
+		&:nth-child(2n) {
+			background-color: lighten($default, 30%);
+		}
+	}
+
+	th {
+		color: $white;
+		background-color: $light-blue;
+	}
+
+	th, td {
+		padding: 12px;
+	}
+}

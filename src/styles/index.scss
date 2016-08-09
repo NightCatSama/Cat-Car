@@ -1,0 +1,77 @@
+@import './common/util';
+@import './common/reset';
+
+$menu-width: 220px;
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    padding-left: $menu-width;
+    align-items: stretch;
+    position: relative;
+}
+
+.menu {
+	position: fixed;
+	width: $menu-width;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	color: $default;
+	background-color: $font-color;
+	display: flex;
+	flex-direction: column;
+
+	.menu-header {
+		width: 100%;
+		padding: 20px 0;
+		font-size: 30px;
+		font-family: "Segoe UI";
+		font-weight: 700;
+		@include flex-center();
+		flex-direction: column;
+		border-bottom: 2px solid $dark-default;
+		box-shadow: 0 3px 5px 0 rgba(0,0,0,.16);
+
+		img {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+		}
+	}
+
+	.menu-content {
+		margin: 20px 0;
+		padding-left: 30px;
+
+		li {
+			margin-bottom: 10px;
+			font-weight: 500;
+			cursor: pointer;
+
+			&:hover {
+				color: $white;
+			}
+
+			&.active {
+				color: $yellow;
+			}
+		}
+	}
+}
+
+.content {
+	flex: 1;
+	background-color: $bg-color;
+	padding: 20px;
+
+	.title {
+		color: $blue;
+	}
+
+	.sub-title {
+		color: $dark-blue;
+	}
+}
