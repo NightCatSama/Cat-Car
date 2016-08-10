@@ -1,0 +1,34 @@
+@import '../common/util';
+
+.collapse-wrap {
+	position: relative;
+
+	.collapse {
+		display: none;
+
+		&.show {
+			display: block;
+		}
+
+		&.collapsing {
+			overflow: hidden;
+			display: block;
+			transition: height .5s;
+		}
+	}
+
+	.pull-right {
+		transform: translateY(3px);
+		transition: transform .3s;
+	}
+
+	&.open {
+		.collapse {
+			display: block;
+		}
+
+		.pull-right {
+			transform: rotate(90deg);
+		}
+	}
+}

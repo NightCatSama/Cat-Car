@@ -2,6 +2,7 @@
 
 $sjx-height: 16px;
 $gap: 15px;
+$zIndex: 10;
 
 .dropdown-menu-wrap {
 	position: relative;
@@ -9,16 +10,15 @@ $gap: 15px;
 
 .dropdown-menu {
 	background-color: $white;
-	color: $white;
+	color: $font-color;
 	box-shadow: $shadow;
 	border: 1px solid $white;
 	position: absolute;
-	// min-width: 200px;
 	min-height: 100%;
 	display: none;
 	margin: $gap 0 0 0;
-	border-radius: 6px;
-	z-index: 1;
+	border-radius: 8px;
+	z-index: $zIndex;
 
 	@each $name, $color in $colors {
         &.dropdown-menu-#{$name} {
@@ -89,7 +89,6 @@ $gap: 15px;
 
 	>li {
 		padding: 8px 12px;
-		color: $font-color;
 
 		&:first-child {
 			border-radius: 5px 5px 0 0;
@@ -97,10 +96,6 @@ $gap: 15px;
 
 		&:last-child {
 			border-radius: 0 0 5px 5px;
-		}
-
-		&:not(.title):hover {
-			background-color: $bg-color2;
 		}
 
 		&.title {
@@ -111,9 +106,14 @@ $gap: 15px;
 	}
 
 	>div {
-		color: $font-color;
 		padding: 10px;
 		border-radius: 5px;
+		word-wrap: break-word;
+
+		.title {
+			text-align: center;
+			font-weight: 700;
+		}
 	}
 
 	&.show {

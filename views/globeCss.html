@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>Globe CSS</title>
     <link rel="stylesheet" href="../dist/stylesheets/layout/menu-content.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1470714000_81893.css">
+    <link rel="stylesheet" href="../dist/stylesheets/component/collapse.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1470829789_184505.css">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
         <div class="menu-header">
             <img src="../dist/images/1.png" alt=""> NightCat
         </div>
-        <ul class="menu-content">
+        <ul class="menu-content padding-top-lg">
             <li class="active">
                 <i class="iconfont icon-star"></i> Globe CSS
             </li>
@@ -22,10 +23,36 @@
                 <a href="component.html">Component</a>
             </li>
             <li>
-                <i class="iconfont icon-bookmark"></i> Plugin
+                <i class="iconfont icon-bookmark"></i>
+                <a href="#">Plugin</a>
             </li>
-            <li>
-                <i class="iconfont icon-tag"></i> Layout
+            <li class="collapse-wrap open">
+                <div data-component="collapse" data-triggle="click" data-target="collapseID" data-collapseGroup="menu">
+                    <i class="iconfont icon-tag"></i> Layout
+                    <i class="iconfont icon-caretright pull-right"></i>
+                </div>
+                <div id="collapseID" class="collapse text-nowrap">
+                    <ul class="fontSize-sm">
+                        <li><a href="#">Menu-Content</a></li>
+                        <li><a href="#">Menu-Content-column</a></li>
+                         <li><a href="#">Menu-Content</a></li>
+                        <li><a href="#">Menu-Content-column</a></li>
+                         <li><a href="#">Menu-Content</a></li>
+                        <li><a href="#">Menu-Content-column</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="collapse-wrap">
+                <div data-component="collapse" data-triggle="click" data-collapseGroup="menu">
+                    <i class="iconfont icon-tag"></i> Layout
+                    <i class="iconfont icon-caretright pull-right"></i>
+                </div>
+                <div class="collapse text-nowrap">
+                    <ul class="fontSize-sm">
+                        <li><a href="#">Menu-Content</a></li>
+                        <li><a href="#">Menu-Content-column</a></li>
+                    </ul>
+                </div>
             </li>
         </ul>
     </div>
@@ -104,9 +131,10 @@
         <button class="padding-xs btn-light-blue">xs</button>
         <div role="button" class="btn-green padding-md">Div Btn</div>
         <div role="button" class="btn-blue padding-sm">Div Btn</div>
+        <button disabled="disabled">Disabled Btn</button>
         <hr />
         <h1 class="blue">Table</h1>
-        <table class="table-light-green striped-light-blue">
+        <table class="table-light-blue striped-light-default">
             <thead>
                 <tr>
                     <th></th>
@@ -151,6 +179,7 @@
             </tbody>
         </table>
     </div>
+    <script data-main="../dist/javascripts/globeCss.js" src="../require.js"></script>
 </body>
 
 </html>

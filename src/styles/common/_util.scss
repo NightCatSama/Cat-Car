@@ -31,17 +31,19 @@ $white: #fffffb;
 $gray: #77787b;
 $masstone: #798f9a;
 $tr: transparent;
+$light-default: #c1c1c1;
 $default: #95a5a6;
+$default2: #333742;
 $dark-default: #7f8c8d;
 $font-color: #282c36;
-$font-color1: #333742;
+$font-color1: $default2;
 $bg-color: #eef2f4;
 $bg-color1: #f2f5f9;
 $bg-color2: #f0f0f0;
 $light-shadow: 0 0 3px 1px rgba(0, 0, 0, .36);
 $shadow: 0 0 5px 3px rgba(0, 0, 0, .16);
-$colors: (default: $default, light-red: $light-red, red: $red, dark-red: $dark-red, light-blue: $light-blue, blue: $blue, dark-blue: $dark-blue, yellow: $yellow, light-green: $light-blue, green: $green, black: $black, white: $white, pink: $pink, orange: $orange, gray: $gray);
-$size: (xs: 1, sm: 2, md: 3, lg: 4);
+$colors: (masstone: $masstone, light-default: $light-default, default: $default, default2: $default2, light-red: $light-red, red: $red, dark-red: $dark-red, light-blue: $light-blue, blue: $blue, dark-blue: $dark-blue, yellow: $yellow, light-green: $light-green, green: $green, black: $black, white: $white, pink: $pink, orange: $orange, gray: $gray);
+$size: (xs: 1, sm: 2, md: 3, lg: 4, xlg: 6, xxlg: 8, xxxlg: 10);
 $locations: left right top bottom;
 
 /*

@@ -116,6 +116,12 @@ button,
     border-radius: 5px;
     color: $white;
     transition: background-color .2s;
+
+    &[disabled] {
+        opacity: .35;
+        cursor: not-allowed;
+    }
+
     &:hover {
         background-color: $default;
     }

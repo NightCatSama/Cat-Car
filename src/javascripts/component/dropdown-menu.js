@@ -1,28 +1,49 @@
-(function(){
-	let btns = document.querySelectorAll('[data-component="dropdown"]');
-	var elem = null;
-	Array.from(btns, (btn) => {
+
+'use strict';
+
+var elem = null;
+class DropdownMenu {
+	constructor(btn) {
+		this.btn = btn;
 		let type = btn.getAttribute('data-triggle') || 'click';
+		let target = btn.getAttribute('data-target');
+		this.target = target ? document.getElementById(target) : btn.nextElementSibling ;
+		this.initEvent(type);
+	}
+	initEvent(type) {
 		if(type === 'click'){
-			btn.addEventListener('click', slideToggle, false);
+			this.btn.addEventListener('click', () => this.slideToggle(), false);
 		}
 		else {
-			btn.addEventListener('mouseover', slideToggle, false);
-			btn.addEventListener('mouseout', slideToggle, false);
+			this.btn.addEventListener('mouseover', () => this.slideToggle(), false);
+			this.btn.addEventListener('mouseout', () => this.slideToggle(), false);
 		}
-	});
-
-	function slideToggle(){
-		let target = this.getAttribute('data-target');
-		target = target ? document.getElementById(target) : this.nextElementSibling ;
-		if(target.classList.contains('show')){
-			target.classList.remove('show');
+	}
+	slideToggle() {
+		if(this.target.classList.contains('show')){
+			this.target.classList.remove('show');
 			elem = null;
 		}
 		else {
-			target.classList.add('show');
+			this.target.classList.add('show');
 			elem && elem.classList.remove('show');
-			elem = target;
+			elem = this.target;
 		}
 	}
-})()
+	slideHide() {
+		if(this.target.classList.contains('show')) {
+			this.target.classList.remove('show');
+			elem = null;
+		}
+	}
+	slideShow() {
+		if(!this.target.classList.contains('show')) {
+			this.target.classList.add('show');
+			elem && elem.classList.remove('show');
+			elem = this.target;
+		}
+	}
+}
+let btns = document.querySelectorAll('[data-component="dropdown"]');
+
+export default Array.from(btns, (btn) => new DropdownMenu(btn));

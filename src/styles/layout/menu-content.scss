@@ -24,6 +24,7 @@ body {
 	background-color: $font-color;
 	display: flex;
 	flex-direction: column;
+	z-index: 9;
 
 	.menu-header {
 		width: 100%;
@@ -44,13 +45,17 @@ body {
 	}
 
 	.menu-content {
-		margin: 20px 0;
-		padding-left: 30px;
-
-		li {
-			margin-bottom: 10px;
+		>li {
+			padding: 8px 20px;
 			font-weight: 500;
 			cursor: pointer;
+			transition: background-color .5s;
+
+			&.open {
+				background-color: $default2;
+				box-shadow: inset 2px 0 0 0 $blue;
+				color: $white;
+			}
 
 			&:hover {
 				color: $white;
@@ -63,6 +68,26 @@ body {
 			a {
 				text-decoration: none;
 				color: inherit;
+			}
+
+			li {
+				color: darken($default, 20%);
+
+				&:hover {
+					color: $white;
+				}
+			}
+
+			&.collapse-wrap {
+				padding: 0;
+
+				>div:first-child {
+					padding: 8px 20px;
+				}
+
+				.collapse ul {
+					padding: 8px 40px
+				}
 			}
 		}
 	}

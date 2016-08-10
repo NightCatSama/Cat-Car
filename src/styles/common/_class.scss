@@ -7,8 +7,10 @@
  */
 
 /*
- * 文本类
+ * 基础类
  */
+
+// text
 .text-center {
     text-align: center;
 }
@@ -34,6 +36,61 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+// vertical-align
+.vertical-middle {
+    vertical-align: middle;
+}
+
+.vertical-sub {
+    vertical-align: sub;
+}
+
+.vertical-textBottom {
+    vertical-align: text-bottom;
+}
+
+.vertical-textTop {
+    vertical-align: text-top;
+}
+
+.vertical-bottom {
+    vertical-align: bottom;
+}
+
+.vertical-top {
+    vertical-align: top;
+}
+
+// display
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.inline-flex-column {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+
 
 
 /*
@@ -118,12 +175,12 @@
     //斑马条纹主题
     .striped-#{$name} {
 		li:nth-child(2n), tr:nth-child(2n) {
-			background-color: lighten($color, 30%);
+			background-color: lighten($color, 15%);
 		}
     }
     .striped-odd-#{$name} {
 		li:nth-child(2n+1), tr:nth-child(2n+1) {
-			background-color: lighten($color, 30%);
+			background-color: lighten($color, 15%);
 		}
     }
 }
@@ -138,7 +195,27 @@
 	.height-#{name} {
 		height: $num * 50px;
 	}
+    .height-middle-#{name} {
+        height: $num * 50px;
+        line-height: $num * 50px;
+    }
     .padding-#{$name} {
         padding: $num * 3px $num * 5px;
+    }
+    .margin-#{$name} {
+        margin: $num * 3px $num * 5px;
+    }
+    @each $location in $locations {
+        .padding-#{$location}-#{$name} {
+            padding-#{$location}: $num * 5px;
+        }
+    }
+    @each $location in $locations {
+        .margin-#{$location}-#{$name} {
+            margin-#{$location}: $num * 5px;
+        }
+    }
+    .fontSize-#{$name} {
+        font-size: 10px + $num * 2px;
     }
 }

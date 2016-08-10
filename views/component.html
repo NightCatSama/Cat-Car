@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Component</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1470829789_184505.css">
     <link rel="stylesheet" href="../dist/stylesheets/layout/menu-content-column.min.css">
     <link rel="stylesheet" href="../dist/stylesheets/component/dropdown-menu.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1470714000_81893.css">
+    <link rel="stylesheet" href="../dist/stylesheets/component/collapse.min.css">
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             </div>
             <div class="user dropdown-menu-wrap">
                 <img data-triggle="click" data-component="dropdown" src="../dist/images/1.png" />
-                <ul class="dropdown-menu" data-location="right" data-dir="bottom">
+                <ul class="dropdown-menu width-md" data-location="right" data-dir="bottom">
                     <li>账号信息</li>
                     <li class="theme-red">退出登录</li>
                 </ul>
@@ -35,33 +36,30 @@
         </div>
     </div>
     <div class="content">
-        <h2 class="blue" id="Dropdown-menu">Dropdown-menu</h2>
+        <h2 class="blue" id="Dropdown-menu">#Dropdown-menu</h2>
         <section id="dropdown">
             <div class="dropdown-menu-wrap">
                 <button data-triggle="click" data-component="dropdown" data-target="drop-down-menu1">Click Me!</button>
-                <ul class="dropdown-menu width-lg" id="drop-down-menu1" data-location="left" data-dir="bottom">
-                    <!-- <li class="title">Title</li> -->
+                <ul class="dropdown-menu width-lg striped-pink" id="drop-down-menu1" data-location="left" data-dir="bottom">
                     <li>One</li>
                     <li>Two</li>
                     <li>Three</li>
-                    <!-- <li class="title">Title2</li> -->
                     <li>Four</li>
                 </ul>
             </div>
             <div class="dropdown-menu-wrap">
                 <button data-triggle="click" data-component="dropdown" class="btn-pink">Click Me!</button>
-                <ul class="dropdown-menu width-lg dropdown-menu-pink" data-location="left" data-dir="bottom">
-                    <li class="title">Title</li>
-                    <li>One</li>
-                    <li>Two</li>
-                    <li>Three</li>
-                    <li class="title">Title2</li>
-                    <li>Four</li>
-                </ul>
+                <div class="dropdown-menu width-lg dropdown-menu-pink" data-location="left" data-dir="top">
+                    <div>
+                        <div class="title">Pink</div>
+                        <div>I'm a pink cat
+                            <br />喵喵喵~</div>
+                    </div>
+                </div>
             </div>
             <div class="dropdown-menu-wrap">
                 <button data-triggle="click" data-component="dropdown" class="btn-orange">Click Me!</button>
-                <ul class="dropdown-menu width-lg dropdown-menu-orange" data-location="left" data-dir="bottom">
+                <ul class="dropdown-menu width-lg dropdown-menu-orange" data-location="right" data-dir="bottom">
                     <li class="title">Title</li>
                     <li>One</li>
                     <li>Two</li>
@@ -81,6 +79,16 @@
                     <li>Four</li>
                 </ul>
             </div>
+            <div class="dropdown-menu-wrap">
+                <button data-triggle="click" data-component="dropdown" class="btn-default2">Click Me!</button>
+                <div class="dropdown-menu width-lg dropdown-menu-default2" data-location="right" data-dir="top">
+                    <div>
+                        <div class="title">Black</div>
+                        <div>I'm a nightcat
+                            <br />喵哈哈哈~</div>
+                    </div>
+                </div>
+            </div>
             <br />
             <div class="dropdown-menu-wrap">
                 <button class="btn-green" data-triggle="hover" data-component="dropdown">Hover Me!</button>
@@ -90,11 +98,168 @@
             </div>
             <div class="dropdown-menu-wrap">
                 <button class="btn-blue" data-triggle="hover" data-component="dropdown">Hover Me!</button>
-                <div class="dropdown-menu text-center dropdown-menu-black" data-location="top" data-dir="right">
+                <div class="dropdown-menu text-center dropdown-menu-default2" data-location="top" data-dir="right">
                     <div>Amazing!</div>
                 </div>
             </div>
         </section>
+        <h2 class="blue" id="Dropdown-menu">#Collapses</h2>
+        <section id="collapses">
+             <div class="btn-group block margin-lg">
+                <button class="margin-right-md btn-masstone" id="closeCollapse1">关闭所有组1</button>
+                <button class="margin-right-md btn-default1" id="closeCollapse2">关闭所有组2</button>
+                <button class="margin-right-md btn-default2" id="closeCollapseAll">关闭所有</button>
+            </div>
+
+            <ul class="width-xxlg inline-flex-column">
+                <li class="collapse-wrap bg-pink open">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="group1" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looksone vertical-sub"></i> Pink
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是组1的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-green">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="group1" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-lookstwo vertical-sub"></i> Green
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是组1的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-blue">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="group1" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looks3 vertical-sub"></i> Blue
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是组1的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-yellow">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="group2" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looks4 vertical-sub"></i> Yellow
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是组2的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-orange">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="group2" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looks5 vertical-sub"></i> Orange
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是组2的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-red">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="group2" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looks6 vertical-sub"></i> Red
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是组2的</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul class="width-xxlg inline-flex-column margin-left-lg">
+                <li class="collapse-wrap bg-pink">
+                    <div data-component="collapse" data-triggle="click" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looksone vertical-sub"></i> Pink
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是独立的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-green">
+                    <div data-component="collapse" data-triggle="click" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-lookstwo vertical-sub"></i> Green
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是独立的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-blue">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="group1" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looks3 vertical-sub"></i> Blue
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是组1的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-yellow">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="group2" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looks4 vertical-sub"></i> Yellow
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是组2的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-orange">
+                    <div data-component="collapse" data-triggle="click" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looks5 vertical-sub"></i> Orange
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是独立的</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap bg-red">
+                    <div data-component="collapse" data-triggle="click" class="white padding-md">
+                        <i class="iconfont fontSize-xxlg icon-looks6 vertical-sub"></i> Red
+                        <i class="iconfont icon-caretright pull-right"></i>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="padding-lg fontSize-sm white">
+                            <li>Hi</li>
+                            <li>我是独立的</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+       </section>
     </div>
     <script data-main="../dist/javascripts/component.js" src="../require.js"></script>
 </body>
