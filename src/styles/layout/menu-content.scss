@@ -1,6 +1,5 @@
 @import '../common/util';
 @import '../common/reset';
-@import '../common/theme';
 @import '../common/class';
 
 $menu-width: 220px;
@@ -35,7 +34,7 @@ body {
 		@include flex-center();
 		flex-direction: column;
 		border-bottom: 2px solid $dark-default;
-		box-shadow: 0 3px 5px 0 rgba(0,0,0,.16);
+		box-shadow: $shadow;
 
 		img {
 			width: 80px;

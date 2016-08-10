@@ -1,3 +1,10 @@
+/*
+ * Reset.scss
+ * ------------------------
+ * 此处只修改浏览器默认样式
+ * (=ˋωˊ=)
+ */
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -52,7 +59,15 @@ a:focus,
 input,
 input:hover,
 input:active,
-input:focus {
+input:focus,
+select,
+select:hover,
+select:active,
+select:focus,
+textarea,
+textarea:hover,
+textarea:active,
+textarea:focus {
     outline: none;
 }
 
@@ -94,7 +109,7 @@ hr {
 
 button,
 [role='button'] {
-    padding: 10px 15px;
+    padding: 9px 15px;
     display: inline-block;
     border: none;
     background-color: $dark-default;
@@ -153,19 +168,11 @@ table {
 
 	tr {
 		text-align: left;
-
-		&:hover {
-			background-color: lighten($light-blue, 20%)!important;
-		}
-
-		&:nth-child(2n) {
-			background-color: lighten($default, 30%);
-		}
 	}
 
 	th {
 		color: $white;
-		background-color: $light-blue;
+		background-color: $default;
 	}
 
 	th, td {

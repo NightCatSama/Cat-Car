@@ -1,7 +1,14 @@
 /*
- * Beautiful Color
+ * Util.scss
+ * ------------------------
+ * 此处只有公共变量 @Mixin @Function
+ * 不生产直接样式
+ * (=ˋωˊ=)
  */
 
+/*
+ * 漂亮的颜色
+ */
 $pink: #f7acbc;
 $roseate: #f05b72;
 $light-red: #d93a49;
@@ -33,8 +40,9 @@ $bg-color1: #f2f5f9;
 $bg-color2: #f0f0f0;
 $light-shadow: 0 0 3px 1px rgba(0, 0, 0, .36);
 $shadow: 0 0 5px 3px rgba(0, 0, 0, .16);
-$colors: (red: $red, blue: $blue, yellow: $yellow, green: $green, black: $black, white: $white, pink: $pink, orange: $orange, gray: $gray);
-$locations: 'left' 'right' 'top' 'bottom';
+$colors: (default: $default, light-red: $light-red, red: $red, dark-red: $dark-red, light-blue: $light-blue, blue: $blue, dark-blue: $dark-blue, yellow: $yellow, light-green: $light-blue, green: $green, black: $black, white: $white, pink: $pink, orange: $orange, gray: $gray);
+$size: (xs: 1, sm: 2, md: 3, lg: 4);
+$locations: left right top bottom;
 
 /*
  * 垂直居中

@@ -1,58 +1,144 @@
+@import 'util';
+/*
+ * Class.scss
+ * ------------------------
+ * 公用类库，让样式更便捷（偷懒）
+ * (=ˋωˊ=)
+ */
+
 /*
  * 文本类
  */
 .text-center {
-	text-align: center;
+    text-align: center;
 }
 
 .text-left {
-	text-align: left;
+    text-align: left;
 }
 
 .text-right {
-	text-align: right;
+    text-align: right;
 }
 
 .text-justify {
-	text-align: justify;
+    text-align: justify;
 }
 
 .text-nowrap {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 .text-ellipsis {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
+
 
 /*
  * 浮动
  */
 .pull-left {
-	float: left;
+    float: left;
 }
 
 .pull-right {
-	float: right;
+    float: right;
 }
+
+.clear {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
 
 /*
  * 组件类
  */
-.component {
-	position: relative;
-	display: inline-block;
+.input-group {
+    margin: 10px 0;
+    display: block;
+    >label {
+        font-size: 14px;
+        display: block;
+        color: $masstone;
+    }
 }
 
-.input-group {
-	margin: 10px 0;
-	display: block;
 
-	>label {
-		font-size: 14px;
-		display: block;
-		color: $masstone;
+/*
+ * 主题类
+ */
+@each $name, $color in $colors {
+	//基本主题
+    .#{$name} {
+        color: $color!important;
+    }
+    .bg-#{$name} {
+        background-color: $color!important;
+    }
+    .theme-#{$name} {
+        background-color: $color!important;
+        color: $white!important;
+        &:hover {
+            background-color: lighten($color, 10%)!important;
+        }
+        &:active {
+            background-color: darken($color, 10%)!important;
+        }
+    }
+    //按钮主题
+    .btn-#{$name} {
+        background-color: $color;
+        &:hover {
+            background-color: lighten($color, 5%);
+        }
+        &:active {
+            background-color: darken($color, 5%);
+        }
+    }
+
+    //表格主题
+    .table-#{$name} {
+    	th {
+    		background-color: $color;
+    	}
+        tr:hover {
+			background-color: lighten($color, 20%)!important;
+		}
+    }
+
+    //斑马条纹主题
+    .striped-#{$name} {
+		li:nth-child(2n), tr:nth-child(2n) {
+			background-color: lighten($color, 30%);
+		}
+    }
+    .striped-odd-#{$name} {
+		li:nth-child(2n+1), tr:nth-child(2n+1) {
+			background-color: lighten($color, 30%);
+		}
+    }
+}
+
+/*
+ * 大小类
+ */
+@each $name, $num in $size {
+	.width-#{$name} {
+		width: $num * 50px;
 	}
+	.height-#{name} {
+		height: $num * 50px;
+	}
+    .padding-#{$name} {
+        padding: $num * 3px $num * 5px;
+    }
 }

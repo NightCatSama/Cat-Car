@@ -11,17 +11,19 @@ $gap: 15px;
 	background-color: $white;
 	color: $white;
 	box-shadow: $shadow;
+	border: 1px solid $white;
 	position: absolute;
-	min-width: 200px;
+	// min-width: 200px;
 	min-height: 100%;
 	display: none;
 	margin: $gap 0 0 0;
-	border-radius: 5px;
+	border-radius: 6px;
 	z-index: 1;
 
 	@each $name, $color in $colors {
         &.dropdown-menu-#{$name} {
         	color: $color;
+        	border-color: $color;
             .title {
         		background-color: $color;
         		color: $white;
