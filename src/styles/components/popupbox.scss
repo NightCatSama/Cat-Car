@@ -4,11 +4,11 @@ $sjx-height: 16px;
 $gap: 15px;
 $zIndex: 10;
 
-.dropdown-menu-wrap {
+.popupbox-wrap {
 	position: relative;
 }
 
-.dropdown-menu {
+.popupbox {
 	background-color: $white;
 	color: $font-color;
 	box-shadow: $shadow;
@@ -21,7 +21,7 @@ $zIndex: 10;
 	z-index: $zIndex;
 
 	@each $name, $color in $colors {
-        &.dropdown-menu-#{$name} {
+        &.popupbox-#{$name} {
         	color: $color;
         	border-color: $color;
             .title {

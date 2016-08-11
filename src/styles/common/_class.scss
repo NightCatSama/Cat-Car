@@ -9,6 +9,13 @@
 /*
  * 基础类
  */
+.show {
+    display: block!important;
+}
+
+.hide {
+    display: none!important;
+}
 
 // text
 .text-center {
@@ -80,7 +87,6 @@
     flex-direction: column;
 }
 
-
 .inline-flex {
     display: inline-flex;
 }
@@ -90,8 +96,22 @@
     flex-direction: column;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
 
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
 
+.flex-v-center {
+    align-items: center;
+}
+
+.flex-h-center {
+    justify-content: center;
+}
 
 /*
  * 浮动
@@ -133,7 +153,7 @@
 /*
  * 主题类
  */
-@each $name, $color in $colors {
+@each $name, $color, $lightPercent in $colors {
 	//基本主题
     .#{$name} {
         color: $color!important;
@@ -168,8 +188,16 @@
     		background-color: $color;
     	}
         tr:hover {
-			background-color: lighten($color, 20%)!important;
+            opacity: $lightPercent;
+			background-color: lighten($color, $lightPercent)!important;
 		}
+        tr.active {
+            background-color: lighten($color, $lightPercent)!important;
+
+            // &:hover {
+            //     background-color: lighten($color, $lightPercent)!important;
+            // }
+        }
     }
 
     //斑马条纹主题
@@ -188,6 +216,14 @@
 /*
  * 大小类
  */
+@each $name, $percent in $percents {
+    .width-#{$name} {
+        width: $percent;
+    }
+    .height-#{name} {
+        height: $percent;
+    }
+}
 @each $name, $num in $size {
 	.width-#{$name} {
 		width: $num * 50px;
@@ -199,20 +235,40 @@
         height: $num * 50px;
         line-height: $num * 50px;
     }
-    .padding-#{$name} {
+    .p-#{$name} {
         padding: $num * 3px $num * 5px;
     }
-    .margin-#{$name} {
+    .m-#{$name} {
         margin: $num * 3px $num * 5px;
     }
     @each $location in $locations {
-        .padding-#{$location}-#{$name} {
+        .p#{str-slice($location, 0, 1)}-#{$name} {
             padding-#{$location}: $num * 5px;
         }
-    }
-    @each $location in $locations {
-        .margin-#{$location}-#{$name} {
+        .m#{str-slice($location, 0, 1)}-#{$name} {
             margin-#{$location}: $num * 5px;
+        }
+    }
+    @each $direction in $directions {
+        .p#{str-slice($direction, 0, 1)}-#{$name} {
+            @if ($direction == horizontal) {
+                @extend .pl-#{$name};
+                @extend .pr-#{$name};
+            }
+            @else {
+                @extend .pt-#{$name};
+                @extend .pb-#{$name};
+            }
+        }
+        .m#{str-slice($direction, 0, 1)}-#{$name} {
+            @if ($direction == horizontal) {
+                @extend .ml-#{$name};
+                @extend .mr-#{$name};
+            }
+            @else {
+                @extend .mt-#{$name};
+                @extend .mb-#{$name};
+            }
         }
     }
     .fontSize-#{$name} {

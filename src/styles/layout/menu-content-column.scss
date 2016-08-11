@@ -89,6 +89,7 @@ body {
         }
 
         .user {
+            display: flex;
             img {
                 width: 32px;
                 width: $menu-height * .6;
@@ -100,16 +101,6 @@ body {
 }
 
 .content {
-    padding: 10px 20px;
     background-color: $bg-color;
     flex: 1;
-
-    #dropdown {
-        // display: flex;
-
-        >div {
-            display: inline-block;
-            margin: 20px 20px 20px 0;
-        }
-    }
 }

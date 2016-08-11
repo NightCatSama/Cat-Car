@@ -6,9 +6,9 @@
  * (=ˋωˊ=)
  */
 
-/*
- * 漂亮的颜色
- */
+//**************************************************************
+//        漂亮的颜色
+//**************************************************************
 $pink: #f7acbc;
 $roseate: #f05b72;
 $light-red: #d93a49;
@@ -28,6 +28,7 @@ $brown: #843900;
 $light-black: #444550;
 $black: #130c0e;
 $white: #fffffb;
+$light-gray: #eef2f4;
 $gray: #77787b;
 $masstone: #798f9a;
 $tr: transparent;
@@ -37,19 +38,21 @@ $default2: #333742;
 $dark-default: #7f8c8d;
 $font-color: #282c36;
 $font-color1: $default2;
-$bg-color: #eef2f4;
+$bg-color: $light-gray;
 $bg-color1: #f2f5f9;
 $bg-color2: #f0f0f0;
 $light-shadow: 0 0 3px 1px rgba(0, 0, 0, .36);
 $shadow: 0 0 5px 3px rgba(0, 0, 0, .16);
-$colors: (masstone: $masstone, light-default: $light-default, default: $default, default2: $default2, light-red: $light-red, red: $red, dark-red: $dark-red, light-blue: $light-blue, blue: $blue, dark-blue: $dark-blue, yellow: $yellow, light-green: $light-green, green: $green, black: $black, white: $white, pink: $pink, orange: $orange, gray: $gray);
-$size: (xs: 1, sm: 2, md: 3, lg: 4, xlg: 6, xxlg: 8, xxxlg: 10);
+$colors: (roseate $roseate 25%), (masstone $masstone 30%), (light-default $light-default 10%), (default $default 20%), (default2 $default2 60%), (light-red $light-red 40%), (red $red 40%), (dark-red $dark-red 40%), (light-blue $light-blue 20%), (blue $blue 25%), (dark-blue $dark-blue 20%), (yellow $yellow 25%), (light-green $light-green 20%), (green $green 20%), (black $black 50%), (white $white 0), (pink $pink 10%), (orange $orange 30%), (gray $gray 40%), (light-gray $light-gray 10%);
+$size: (xs 1), (sm 2), (md 3), (lg 4), (xlg 6), (xxlg 8), (xxxlg 10);
+$percents: (full 100%), (half, 50%), (third, 33%);
 $locations: left right top bottom;
+$directions: vertical horizontal;
 
-/*
- * 垂直居中
- */
 
+//**************************************************************
+//        垂直居中
+//**************************************************************
 @mixin vertical-center($pos: relative) {
     position: $pos;
     top: 50%;
@@ -57,10 +60,9 @@ $locations: left right top bottom;
 }
 
 
-/*
- * 设置placeholder样式
- */
-
+//**************************************************************
+//        设置placeholder样式
+//**************************************************************
 @mixin placeholder($color: #CCC, $font-size: inherit) {
     &::-moz-placeholder {
         color: $color;
@@ -77,10 +79,9 @@ $locations: left right top bottom;
 }
 
 
-/*
- * flex 居中
- */
-
+//**************************************************************
+//         flex居中
+//**************************************************************
 @mixin flex-center($display: flex) {
     display: $display;
     justify-content: center;
@@ -88,10 +89,9 @@ $locations: left right top bottom;
 }
 
 
-/*
- * 三角形Mixin
- */
-
+//**************************************************************
+//          三角形 Params[大小，颜色，方向]
+//**************************************************************
 @mixin triangle ($size, $color, $direction) {
     height: 0;
     width: 0;

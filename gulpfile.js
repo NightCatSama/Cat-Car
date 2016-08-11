@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
+    cleanCSS = require('gulp-clean-css'),
     csscomb = require('gulp-csscomb'),
     notify = require('gulp-notify'),
     rename = require('gulp-rename'),
@@ -65,7 +65,7 @@ gulp.task('sass', function() {
     //给文件添加.min后缀
     .pipe(rename({ suffix: '.min' }))
     //压缩样式文件
-    .pipe(minifycss())
+    .pipe(cleanCSS())
     //输出压缩文件到指定目录
     .pipe(gulp.dest('dist/stylesheets'))
     // .pipe(notify({ message: 'sass编译成功！' }))

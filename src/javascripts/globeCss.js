@@ -2,5 +2,5 @@ requirejs.config({
     baseUrl: 'dist/javascripts'
 });
 
-import collapses from 'component/collapse';
+import collapses from 'components/collapse';
 console.log(collapses);

@@ -2,19 +2,16 @@ requirejs.config({
     baseUrl: 'dist/javascripts'
 });
 
-import menus from 'component/dropdown-menu';
-import collapses from 'component/collapse';
+import menus from 'components/popupbox';
+import collapses, { groups as g, closeGroup, slideAll, refreshCollapse, README } from 'components/collapse';
 
 let btn1 = document.getElementById('closeCollapse1');
 let btn2 = document.getElementById('closeCollapse2');
 let btnAll = document.getElementById('closeCollapseAll');
+let btn = document.getElementById('closeCollapseSingle');
+let blueCat = document.getElementById('blueCat');
 
-const closeCollapse = (arr) => {
-	Array.from(arr, (obj) => {
-		obj.slideClose();
-	})
-}
-
-btn1.addEventListener('click', () => Array.from(collapses.groups.group1, (obj) => obj.slideClose()));
-btn2.addEventListener('click',() => Array.from(collapses.groups.group2, (obj) => obj.slideClose()));
-btnAll.addEventListener('click', () => Array.from(collapses.collapses, (obj) => obj.slideClose()));
+btn1.addEventListener('click', () => closeGroup('group1'));
+btn2.addEventListener('click',() => closeGroup('group2'));
+btnAll.addEventListener('click', () => slideAll('close'));
+btn.addEventListener('click', blueCat.slideCollapse);
