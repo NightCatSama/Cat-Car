@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Component</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1470829789_184505.css">
+    <link rel="stylesheet" href="../dist/stylesheets/component.min.css">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu-header orange">
+            NightCat
+        </div>
+        <nav class="menu-content">
+            <div><a href="globeCss.html">Globe CSS</a></div>
+            <div class="active">Component</div>
+            <div>Plugin</div>
+            <div>Layout</div>
+        </nav>
+        <div class="menu-footer">
+            <div class="search">
+                <input type="text" />
+                <i class="iconfont icon-search"></i>
+            </div>
+            <div class="user popupbox-wrap">
+                <div data-triggle="click" data-component="popupbox" class="flex flex-v-center">
+                    <img src="../dist/images/1.png" class="mr-sm" /> 夜喵
+                </div>
+                <ul class="popupbox width-md" data-location="right" data-dir="bottom">
+                    <li>账号信息</li>
+                    <li class="theme-red">退出登录</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="blue">#Popupbox</h2>
+        <section id="popupbox">
+            <div class="popupbox-wrap">
+                <button data-triggle="click" data-component="popupbox" data-target="drop-down-menu1">Click Me!</button>
+                <ul class="popupbox width-lg striped-light-default" id="drop-down-menu1" data-location="left" data-dir="bottom">
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                    <li>Four</li>
+                </ul>
+            </div>
+            <div class="popupbox-wrap">
+                <button data-triggle="click" data-component="popupbox" class="btn-pink">Click Me!</button>
+                <div class="popupbox width-lg popupbox-pink" data-location="left" data-dir="top">
+                    <div>
+                        <div class="title">Pink</div>
+                        <div>I'm pink cat
+                            <br />喵喵喵~</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popupbox-wrap">
+                <button data-triggle="click" data-component="popupbox" class="btn-roseate">Click Me!</button>
+                <div class="popupbox popupbox-roseate" data-location="left" data-dir="bottom">
+                    <table class="width-xxlg table-roseate striped-light-default">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Intro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NightCat</td>
+                                <td>$20</td>
+                                <td>It's Awesome!</td>
+                            </tr>
+                            <tr>
+                                <td>Elder</td>
+                                <td>∞</td>
+                                <td>+1s</td>
+                            </tr>
+                            <tr>
+                                <td>Cat</td>
+                                <td>$9999</td>
+                                <td>Miaow~</td>
+                            </tr>
+                            <tr>
+                                <td>You</td>
+                                <td>Free</td>
+                                <td>Nothing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="popupbox-wrap">
+                <button data-triggle="click" data-component="popupbox" class="btn-blue">Click Me!</button>
+                <ul class="popupbox width-lg popupbox-blue" data-location="top" data-dir="left">
+                    <li class="title">Title</li>
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                    <li class="title">Title2</li>
+                    <li>Four</li>
+                </ul>
+            </div>
+            <div class="popupbox-wrap">
+                <button data-triggle="click" data-component="popupbox" class="btn-default2">Click Me!</button>
+                <div class="popupbox width-lg popupbox-default2" data-location="bottom" data-dir="right">
+                    <div>
+                        <div class="title">Black</div>
+                        <div>I'm NightCat
+                            <br />喵哈哈哈~</div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="popupbox-wrap">
+                <div class="bg-green white p-sm" data-triggle="hover" data-component="popupbox">Hover Me!</div>
+                <div class="popupbox text-center popupbox-green" data-location="left" data-dir="bottom">
+                    <div>Amazing!</div>
+                </div>
+            </div>
+            <div class="popupbox-wrap">
+                <div class="bg-red white p-sm" data-triggle="hover" data-component="popupbox">Hover Me!</div>
+                <div class="popupbox text-center popupbox-red" data-location="bottom" data-dir="right">
+                    <div>Amazing!</div>
+                </div>
+            </div>
+        </section>
+        <h2 class="blue">#Collapses</h2>
+        <section id="collapses">
+            <div class="btn-group block m-lg">
+                <button class="mr-md btn-masstone" id="closeCollapse1">关闭组1</button>
+                <button class="mr-md btn-default1" id="closeCollapse2">关闭组2</button>
+                <button class="mr-md btn-default2" id="closeCollapseAll">关闭所有</button>
+                <button class="mr-md btn-blue" id="closeCollapseSingle">单独控制</button>
+            </div>
+            <div class="collapse-group flex">
+                <ul class="width-xxlg m-lg inline-flex-column">
+                    <li class="collapse-wrap bg-pink">
+                        <div data-component="collapse" data-triggle="click" data-collapseGroup="group1" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looksone vertical-sub"></i> Pink
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是组1的</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-green">
+                        <div data-component="collapse" data-triggle="click" data-collapseGroup="group1" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-lookstwo vertical-sub"></i> Green
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是组1的</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-blue">
+                        <div data-component="collapse" data-triggle="click" data-collapseGroup="group1" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks3 vertical-sub"></i> Blue
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是组1的</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-yellow">
+                        <div data-component="collapse" data-triggle="click" data-collapseGroup="group2" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks4 vertical-sub"></i> Yellow
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是组2的</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-orange">
+                        <div data-component="collapse" data-triggle="click" data-collapseGroup="group2" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks5 vertical-sub"></i> Orange
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是组2的</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-red">
+                        <div data-component="collapse" data-triggle="click" data-collapseGroup="group2" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks6 vertical-sub"></i> Red
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是组2的</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="width-xxlg m-lg inline-flex-column">
+                    <li class="collapse-wrap bg-pink">
+                        <div data-component="collapse" data-triggle="click" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looksone vertical-sub"></i> Pink
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是独立的</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-green">
+                        <div data-component="collapse" data-triggle="click" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-lookstwo vertical-sub"></i> Green
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是独立的</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-blue open">
+                        <div class="collapse text-nowrap" id="blueCat" data-collapseGroup="group1" data-component="collapse">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是组1的</li>
+                                <li>我只能通过JS控制(=ˋωˊ=)</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-yellow">
+                        <div data-component="collapse" data-triggle="click" data-collapseGroup="group2" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks4 vertical-sub"></i> Yellow
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是组2的</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-orange">
+                        <div data-component="collapse" data-triggle="click" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks5 vertical-sub"></i> Orange
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是独立的</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-red">
+                        <div data-component="collapse" data-triggle="click" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks6 vertical-sub"></i> Red
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>我是独立的</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="width-xxlg m-lg inline-flex-column">
+                    <li class="collapse-wrap bg-pink">
+                        <div data-component="collapse" data-triggle="hover" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looksone vertical-sub"></i> Pink
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>Hover Miao OwO</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-green">
+                        <div data-component="collapse" data-triggle="hover" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-lookstwo vertical-sub"></i> Green
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>Hover Miao OwO</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-blue">
+                        <div data-component="collapse" data-triggle="hover" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks3 vertical-sub"></i> Blue
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>Hover Miao OwO</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-yellow">
+                        <div data-component="collapse" data-triggle="hover" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks4 vertical-sub"></i> Yellow
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>Hover Miao OwO</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-orange">
+                        <div data-component="collapse" data-triggle="hover" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks5 vertical-sub"></i> Orange
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>Hover Miao OwO</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="collapse-wrap bg-red">
+                        <div data-component="collapse" data-triggle="hover" class="white p-md">
+                            <i class="iconfont fontSize-xxlg icon-looks6 vertical-sub"></i> Red
+                            <i class="iconfont icon-caretright pull-right"></i>
+                        </div>
+                        <div class="collapse text-nowrap">
+                            <ul class="p-lg fontSize-sm white">
+                                <li>Hi</li>
+                                <li>Hover Miao OwO</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <h2 class="blue">#Grid</h2>
+        <section id="grid">
+            <div class="grid">
+            </div>
+        </section>
+    </div>
+    <script data-main="../dist/javascripts/component.js" src="../require.js"></script>
+</body>
+
+</html>
