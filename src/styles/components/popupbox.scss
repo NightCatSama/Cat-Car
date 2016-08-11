@@ -1,0 +1,122 @@
+@import '../common/util';
+
+$sjx-height: 16px;
+$gap: 15px;
+$zIndex: 10;
+
+.popupbox-wrap {
+	position: relative;
+}
+
+.popupbox {
+	background-color: $white;
+	color: $font-color;
+	box-shadow: $shadow;
+	border: 1px solid $white;
+	position: absolute;
+	min-height: 100%;
+	display: none;
+	margin: $gap 0 0 0;
+	border-radius: 8px;
+	z-index: $zIndex;
+
+	@each $name, $color in $colors {
+        &.popupbox-#{$name} {
+        	color: $color;
+        	border-color: $color;
+            .title {
+        		background-color: $color;
+        		color: $white;
+        		border: none;
+        	}
+
+        	>div {
+        		background-color: $color;
+        		color: $white;
+        	}
+        }
+    }
+
+	&::before {
+		content: '';
+		position: absolute;
+	}
+
+	@each $location in $locations {
+        &[data-location=#{$location}] {
+            #{$location}: 0;
+
+            &::before {
+            	#{$location}: 8px;
+            }
+        }
+
+        &[data-dir=#{$location}] {
+			@if ($location==right) {
+				left: 100%;
+				margin: 0 0 0 $gap;
+				&::before {
+					@include triangle($sjx-height, inherit, 'left');
+	            	left: -$sjx-height;
+	            }
+			}
+			@else if ($location==left) {
+				right: 100%;
+				margin: 0 $gap 0 0;
+				&::before {
+					@include triangle($sjx-height, inherit, 'right');
+	            	right: -$sjx-height;
+	            }
+			}
+			@else if ($location==top) {
+				bottom: 100%;
+				margin: 0 0 $gap 0;
+				&::before {
+					@include triangle($sjx-height, inherit, 'bottom');
+	            	bottom: -$sjx-height;
+	            }
+			}
+			@else {
+				top: 100%;
+				margin: $gap 0 0 0;
+				&::before {
+					@include triangle($sjx-height, inherit, 'top');
+	            	top: -$sjx-height;
+	            }
+			}
+        }
+    }
+
+	>li {
+		padding: 8px 12px;
+
+		&:first-child {
+			border-radius: 5px 5px 0 0;
+		}
+
+		&:last-child {
+			border-radius: 0 0 5px 5px;
+		}
+
+		&.title {
+			border-bottom: 1px solid $default;
+			font-weight: 700;
+			background-color: lighten($gray, 50%);
+		}
+	}
+
+	>div {
+		padding: 10px;
+		border-radius: 5px;
+		word-wrap: break-word;
+
+		.title {
+			text-align: center;
+			font-weight: 700;
+		}
+	}
+
+	&.show {
+		display: block;
+	}
+}

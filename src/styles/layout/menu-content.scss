@@ -1,0 +1,99 @@
+@import '../common/util';
+@import '../common/reset';
+@import '../common/class';
+
+$menu-width: 220px;
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    padding-left: $menu-width;
+    align-items: stretch;
+    position: relative;
+}
+
+.menu {
+	position: fixed;
+	width: $menu-width;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	color: $default;
+	background-color: $font-color;
+	display: flex;
+	flex-direction: column;
+	z-index: 9;
+
+	.menu-header {
+		width: 100%;
+		padding: 20px 0;
+		font-size: 30px;
+		font-family: "Segoe UI";
+		font-weight: 700;
+		@include flex-center();
+		flex-direction: column;
+		border-bottom: 2px solid $dark-default;
+		box-shadow: $shadow;
+
+		img {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+		}
+	}
+
+	.menu-content {
+		>li {
+			padding: 8px 20px;
+			font-weight: 500;
+			cursor: pointer;
+			transition: background-color .5s;
+
+			&.open {
+				background-color: $default2;
+				box-shadow: inset 2px 0 0 0 $blue;
+				color: $white;
+			}
+
+			&:hover {
+				color: $white;
+			}
+
+			&.active {
+				color: $yellow;
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			li {
+				color: darken($default, 20%);
+
+				&:hover {
+					color: $white;
+				}
+			}
+
+			&.collapse-wrap {
+				padding: 0;
+
+				>div:first-child {
+					padding: 8px 20px;
+				}
+
+				.collapse ul {
+					padding: 8px 40px
+				}
+			}
+		}
+	}
+}
+
+.content {
+	flex: 1;
+	background-color: $bg-color;
+}

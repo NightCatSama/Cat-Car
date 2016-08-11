@@ -1,0 +1,15 @@
+@import './layout/menu-content-column';
+@import './components/core';
+
+.content {
+    padding: 10px 20px;
+
+    #popupbox {
+        // display: flex;
+
+        >div {
+            display: inline-block;
+            margin: 20px 20px 20px 0;
+        }
+    }
+}
