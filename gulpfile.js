@@ -29,7 +29,7 @@ gulp.task('browser-sync', ['sass', 'scripts', 'images'], function() {
     gulp.watch("src/javascripts/**/*.js", ['scripts']);
     gulp.watch("src/images/**/*.png", ['images']);
     gulp.watch("**/*.html").on("change", reload);
-    gulp.watch("dist/stylesheets/*.css").on("change", reload);
+    // gulp.watch("dist/stylesheets/*.css").on("change", reload);
 });
 
 // 样式处理

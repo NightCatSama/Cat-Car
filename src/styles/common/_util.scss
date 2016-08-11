@@ -43,13 +43,38 @@ $bg-color1: #f2f5f9;
 $bg-color2: #f0f0f0;
 $light-shadow: 0 0 3px 1px rgba(0, 0, 0, .36);
 $shadow: 0 0 5px 3px rgba(0, 0, 0, .16);
-$colors: (roseate $roseate 25%), (masstone $masstone 30%), (light-default $light-default 10%), (default $default 20%), (default2 $default2 60%), (light-red $light-red 40%), (red $red 40%), (dark-red $dark-red 40%), (light-blue $light-blue 20%), (blue $blue 25%), (dark-blue $dark-blue 20%), (yellow $yellow 25%), (light-green $light-green 20%), (green $green 20%), (black $black 50%), (white $white 0), (pink $pink 10%), (orange $orange 30%), (gray $gray 40%), (light-gray $light-gray 10%);
-$size: (xs 1), (sm 2), (md 3), (lg 4), (xlg 6), (xxlg 8), (xxxlg 10);
-$percents: (full 100%), (half, 50%), (third, 33%);
+$colors: (roseate $roseate 25%),
+(masstone $masstone 30%),
+(light-default $light-default 10%),
+(default $default 20%),
+(default2 $default2 60%),
+(light-red $light-red 40%),
+(red $red 40%),
+(dark-red $dark-red 40%),
+(light-blue $light-blue 20%),
+(blue $blue 25%),
+(dark-blue $dark-blue 20%),
+(yellow $yellow 25%),
+(light-green $light-green 20%),
+(green $green 20%),
+(black $black 50%),
+(white $white 0),
+(pink $pink 10%),
+(orange $orange 30%),
+(gray $gray 40%),
+(light-gray $light-gray 10%);
+$size: (xs 1),
+(sm 2),
+(md 3),
+(lg 4),
+(xlg 6),
+(xxlg 8),
+(xxxlg 10);
+$percents: (full 100%),
+(half, 50%),
+(third, 33%);
 $locations: left right top bottom;
 $directions: vertical horizontal;
-
-
 //**************************************************************
 //        垂直居中
 //**************************************************************
@@ -58,7 +83,6 @@ $directions: vertical horizontal;
     top: 50%;
     transform: translateY(-50%);
 }
-
 
 //**************************************************************
 //        设置placeholder样式
@@ -78,7 +102,6 @@ $directions: vertical horizontal;
     }
 }
 
-
 //**************************************************************
 //         flex居中
 //**************************************************************
@@ -87,7 +110,6 @@ $directions: vertical horizontal;
     justify-content: center;
     align-items: center;
 }
-
 
 //**************************************************************
 //          三角形 Params[大小，颜色，方向]
@@ -143,18 +165,20 @@ $directions: vertical horizontal;
     }
 }
 
+//**************************************************************
+//        响应式max-width
+//**************************************************************
+@mixin max-screen($res) {
+    @media ( max-width: $res) {
+        @content;
+    }
+}
 
-/*
- * 生成一系列主题
- */
-
-@mixin create-theme($template, $styles) {
-    @each $name,
-    $color in $colors {
-        &.#{$template}-#{$name} {
-            @each $style in $styles {
-                #{$style}: $color;
-            }
-        }
+//**************************************************************
+//        响应式min-width
+//**************************************************************
+@mixin min-screen($res) {
+    @media ( min-width: $res) {
+        @content;
     }
 }

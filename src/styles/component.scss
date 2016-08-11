@@ -2,14 +2,20 @@
 @import './components/core';
 
 .content {
-    padding: 10px 20px;
-
+    padding: 20px;
     #popupbox {
-        // display: flex;
-
         >div {
             display: inline-block;
-            margin: 20px 20px 20px 0;
+            margin: 20px;
+        }
+    }
+    #grid {
+        >div [class|='grid'] {
+        	padding-top: 10px;
+        	padding-bottom: 10px;
+            &:not(:last-child) {
+                border-right: 1px solid $gray;
+            }
         }
     }
 }

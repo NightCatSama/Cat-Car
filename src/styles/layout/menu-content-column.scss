@@ -6,10 +6,9 @@ $menu-height: 50px;
 body {
     position: relative;
     display: flex;
-    width: 100vw;
     min-height: 100vh;
     padding-top: $menu-height;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     align-items: stretch;
 }
 

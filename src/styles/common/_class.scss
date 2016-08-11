@@ -101,15 +101,18 @@
 }
 
 .flex-center {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .flex-v-center {
+    display: flex;
     align-items: center;
 }
 
 .flex-h-center {
+    display: flex;
     justify-content: center;
 }
 
@@ -220,7 +223,7 @@
     .width-#{$name} {
         width: $percent;
     }
-    .height-#{name} {
+    .height-#{$name} {
         height: $percent;
     }
 }
@@ -228,10 +231,10 @@
 	.width-#{$name} {
 		width: $num * 50px;
 	}
-	.height-#{name} {
+	.height-#{$name} {
 		height: $num * 50px;
 	}
-    .height-middle-#{name} {
+    .height-middle-#{$name} {
         height: $num * 50px;
         line-height: $num * 50px;
     }
@@ -275,3 +278,4 @@
         font-size: 10px + $num * 2px;
     }
 }
+

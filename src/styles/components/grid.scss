@@ -1,0 +1,64 @@
+@import '../common/util';
+
+$columns: 24;
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    >[class|='grid'] {
+    	width: 0;
+    }
+}
+
+@each $name, $num in $size {
+	.grid-#{$name} {
+		display: flex;
+	    flex-wrap: wrap;
+
+		>[class|='grid'] {
+			width: 0;
+	    	padding-left: $num * 5px;
+	    	padding-right: $num * 5px;
+	    }
+	}
+}
+
+@mixin grid($size: ''){
+	@if($size != '') {
+		$size: -#{$size};
+	}
+	@else {
+		$size: '';
+	}
+	@for $i from 0 through $columns {
+        .grid-#{$i}#{$size} {
+        	@if($i == 0) {
+        		display: none;
+        	}
+        	@else {
+				flex-basis: $i * (100% / 24);
+	            margin-left: 0;
+        	}
+        }
+    }
+    @for $i from 0 through $columns {
+        .grid-#{$i}-offset#{$size} {
+            margin-left: $i * (100% / 24);
+        }
+    }
+}
+
+@include grid();
+
+@include max-screen(1200px) {
+    @include grid(md);
+}
+
+@include max-screen(980px) {
+   @include grid(sm);
+}
+
+@include max-screen(768px) {
+   @include grid(xs);
+}
