@@ -25,7 +25,7 @@ $green: #2ecc71;
 $light-green: #52be7f;
 $dark-green: #27ae60;
 $brown: #843900;
-$light-black: #444550;
+$light-black: #282c36;
 $black: #130c0e;
 $white: #fffffb;
 $light-gray: #eef2f4;
@@ -43,6 +43,7 @@ $bg-color1: #f2f5f9;
 $bg-color2: #f0f0f0;
 $light-shadow: 0 0 3px 1px rgba(0, 0, 0, .36);
 $shadow: 0 0 5px 3px rgba(0, 0, 0, .16);
+$dark-shadow: 0 0 5px 3px rgba(0, 0, 0, .16);
 $colors: (roseate $roseate 25%),
 (masstone $masstone 30%),
 (light-default $light-default 10%),
@@ -57,6 +58,7 @@ $colors: (roseate $roseate 25%),
 (yellow $yellow 25%),
 (light-green $light-green 20%),
 (green $green 20%),
+(light-black $light-black 40%),
 (black $black 50%),
 (white $white 0),
 (pink $pink 10%),
@@ -74,6 +76,7 @@ $percents: (full 100%),
 (half, 50%),
 (third, 33%);
 $locations: left right top bottom;
+$multilocations: (l t), (l b), (r t), (r b), (t l), (t r), (b l), (b r);
 $directions: vertical horizontal;
 //**************************************************************
 //        垂直居中

@@ -6,8 +6,8 @@ $columns: 24;
     display: flex;
     flex-wrap: wrap;
 
-    >[class|='grid'] {
-    	width: 0;
+    .flex1 {
+        flex: 1;
     }
 }
 
@@ -37,7 +37,9 @@ $columns: 24;
         		display: none;
         	}
         	@else {
+                display: flex;
 				flex-basis: $i * (100% / 24);
+                width: 0;
 	            margin-left: 0;
         	}
         }

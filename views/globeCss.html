@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Globe CSS</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1470829789_184505.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1470993821_690063.css">
     <link rel="stylesheet" type="text/css" href="../dist/stylesheets/globeCss.min.css">
 </head>
 
@@ -34,9 +34,9 @@
                     <ul class="fontSize-sm">
                         <li><a href="#">Menu-Content</a></li>
                         <li><a href="#">Menu-Content-column</a></li>
-                         <li><a href="#">Menu-Content</a></li>
+                        <li><a href="#">Menu-Content</a></li>
                         <li><a href="#">Menu-Content-column</a></li>
-                         <li><a href="#">Menu-Content</a></li>
+                        <li><a href="#">Menu-Content</a></li>
                         <li><a href="#">Menu-Content-column</a></li>
                     </ul>
                 </div>
@@ -56,15 +56,17 @@
         </ul>
     </div>
     <div class="content">
-        <h1 class="blue">Title</h1>
-        <h1>Header One</h1>
-        <h2>Header Two</h2>
-        <h3>Header Three</h3>
-        <h4>Header Four</h4>
-        <h5>Header Five</h5>
-        <h6>Header Six</h6>
+        <h1 class="blue" id="Title">#Title</h1>
+        <article>
+            <h1>Header One</h1>
+            <h2>Header Two</h2>
+            <h3>Header Three</h3>
+            <h4>Header Four</h4>
+            <h5>Header Five</h5>
+            <h6>Header Six</h6>
+        </article>
         <hr />
-        <h1 class="blue">Article</h1>
+        <h1 class="blue" id="Article">#Article</h1>
         <h4 class="blue">p</h4>
         <p>ullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
         <h4 class="blue">small</h4>
@@ -76,7 +78,7 @@
             <br /> Here is a long quotation here is a long quotation here is a long quotation.
         </blockquote>
         <hr />
-        <h1 class="blue" id="form">Form</h1>
+        <h1 class="blue" id="Form">#Form</h1>
         <h4 class="blue">Input</h4>
         <label for="account">account: </label>
         <input type="text" id="account" placeholder="Enter account." />
@@ -132,8 +134,8 @@
         <div role="button" class="btn-blue p-sm">Div Btn</div>
         <button disabled="disabled">Disabled Btn</button>
         <hr />
-        <h1 class="blue">Table</h1>
-        <table id="table" class="table-gray">
+        <h1 class="blue" id="Table">#Table</h1>
+        <table id="table" class="table-gray striped-gray border-radius-xs">
             <thead>
                 <tr>
                     <th></th>
@@ -181,7 +183,7 @@
     <script data-main="../dist/javascripts/globeCss.js" src="../require.js"></script>
     <script type="text/javascript">
     var table = document.getElementById('table');
-    table.querySelector('tbody').addEventListener('click', function(e){
+    table.querySelector('tbody').addEventListener('click', function(e) {
         var tr = e.target.parentElement;
         var input = tr.querySelector('input');
         console.log(!input.checked);
@@ -191,4 +193,5 @@
     }, false);
     </script>
 </body>
+
 </html>

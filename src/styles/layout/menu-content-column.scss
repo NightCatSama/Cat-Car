@@ -8,7 +8,6 @@ body {
     display: flex;
     min-height: 100vh;
     padding-top: $menu-height;
-    // overflow-x: hidden;
     align-items: stretch;
 }
 
@@ -22,23 +21,23 @@ body {
     color: $default;
     background-color: $font-color;
     align-items: center;
-    z-index: 9;
+    z-index: 11;
 
     .menu-header {
-        width: auto;
-        padding: 0 20px;
+        width: 180px;
         font-family: "Segoe UI";
         font-size: 30px;
         font-weight: 700;
-        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .16);
         @include flex-center();
     }
     .menu-content {
+        height: $menu-height;
         display: flex;
         padding-left: 30px;
-        div {
-            margin-right: 30px;
+        >div {
+            padding: 0 15px;
             font-weight: 500;
+            @include flex-center;
             cursor: pointer;
             a {
                 color: inherit;

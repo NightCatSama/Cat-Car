@@ -10,14 +10,17 @@
  * 基础类
  */
 .show {
-    display: block!important;
+    display: block;
 }
 
 .hide {
-    display: none!important;
+    display: none;
 }
 
 // text
+.text-bold {
+    font-weight: bold;
+}
 .text-center {
     text-align: center;
 }
@@ -42,6 +45,18 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.text-wrap {
+    white-space: normal;
+}
+
+.text-pre {
+    white-space: pre;
+}
+
+.text-preWrap {
+    white-space: pre-wrap;
 }
 
 // vertical-align
@@ -82,6 +97,10 @@
     display: flex;
 }
 
+.flex1 {
+    flex: 1;
+}
+
 .flex-column {
     display: flex;
     flex-direction: column;
@@ -101,19 +120,46 @@
 }
 
 .flex-center {
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .flex-v-center {
-    display: flex;
     align-items: center;
 }
 
 .flex-h-center {
-    display: flex;
     justify-content: center;
+}
+
+.flex-right {
+    justify-content: flex-end;
+}
+
+.flex-start {
+    align-items: flex-start;
+}
+
+.flex-end {
+    align-items: flex-end;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+
+
+// border
+.circle {
+    border-radius: 50%;
 }
 
 /*
@@ -191,11 +237,11 @@
     		background-color: $color;
     	}
         tr:hover {
-            opacity: $lightPercent;
-			background-color: lighten($color, $lightPercent)!important;
+            $hover:  $lightPercent / 2;
+			background-color: lighten($color, $hover)!important;
 		}
         tr.active {
-            background-color: lighten($color, $lightPercent)!important;
+            background-color: lighten($color, 5%)!important;
 
             // &:hover {
             //     background-color: lighten($color, $lightPercent)!important;
@@ -206,12 +252,12 @@
     //斑马条纹主题
     .striped-#{$name} {
 		li:nth-child(2n), tr:nth-child(2n) {
-			background-color: lighten($color, 15%);
+			background-color: lighten($color, $lightPercent);
 		}
     }
     .striped-odd-#{$name} {
 		li:nth-child(2n+1), tr:nth-child(2n+1) {
-			background-color: lighten($color, 15%);
+			background-color: lighten($color, $lightPercent);
 		}
     }
 }
@@ -237,6 +283,9 @@
     .height-middle-#{$name} {
         height: $num * 50px;
         line-height: $num * 50px;
+    }
+    .border-radius-#{$name} {
+        border-radius: $num * 5px;
     }
     .p-#{$name} {
         padding: $num * 3px $num * 5px;

@@ -48,8 +48,23 @@ h4,
 h5,
 h6 {
     font-weight: 500;
-    line-height: 1.1;
-    margin: 15px 0 10px 0;
+    line-height: 1.426;
+}
+
+article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 10px 0 15px 0;
+    }
+}
+article, section {
+    h1 {
+        font-size: 2em;
+    }
 }
 
 a,
@@ -116,12 +131,10 @@ button,
     border-radius: 5px;
     color: $white;
     transition: background-color .2s;
-
     &[disabled] {
         opacity: .35;
         cursor: not-allowed;
     }
-
     &:hover {
         background-color: $default;
     }
@@ -136,7 +149,9 @@ label {
     padding: 0 5px;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid $default;
@@ -144,44 +159,39 @@ input, select, textarea {
     width: 220px;
     @include placeholder($default);
     font-family: Helvetica;
-
     &:-webkit-autofill {
-	    -webkit-box-shadow: 0 0 0px 1000px $white inset;
-	}
-
+        -webkit-box-shadow: 0 0 0px 1000px $white inset;
+    }
     &:focus {
-    	border-color: $blue;
+        border-color: $blue;
     }
 }
 
 textarea {
-	width: 350px;
-	resize: none;
+    width: 350px;
+    resize: none;
 }
 
-input[type="radio"], input[type="checkbox"] {
-	width: 20px;
+input[type="radio"],
+input[type="checkbox"] {
+    width: 20px;
 }
-
 
 table {
-	background-color: $white;
-	border-collapse: collapse;
-	font-family: 'Microsoft Yahei';
-	border-radius: 5px;
-	box-shadow: 0 0 5px 1px rgba(0,0,0,.26);
-	overflow: hidden;
-
-	tr {
-		text-align: left;
-	}
-
-	th {
-		color: $white;
-		background-color: $default;
-	}
-
-	th, td {
-		padding: 12px;
-	}
+    background-color: $white;
+    border-collapse: collapse;
+    font-family: 'Microsoft Yahei';
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .26);
+    overflow: hidden;
+    tr {
+        text-align: left;
+    }
+    th {
+        color: $white;
+        background-color: $default;
+    }
+    th,
+    td {
+        padding: 12px;
+    }
 }
