@@ -1,5 +1,9 @@
-@import './layout/menu-content';
 @import './components/core';
+@import './layout/menu-content';
+
+$table-theme: blue;
+$themes: (table: $table-theme);
+@include theme($themes);
 
 .content {
 	padding: 20px;

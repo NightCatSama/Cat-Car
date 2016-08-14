@@ -1,8 +1,7 @@
-@import '../common/util';
-@import '../common/reset';
-@import '../common/class';
+@import '../common/core';
 
 $menu-height: 50px;
+
 body {
     position: relative;
     display: flex;
@@ -19,7 +18,7 @@ body {
     width: 100%;
     height: $menu-height;
     color: $default;
-    background-color: $font-color;
+    background-color: $light-black;
     align-items: center;
     z-index: 11;
 
@@ -36,7 +35,7 @@ body {
         padding-left: 30px;
         >div {
             padding: 0 15px;
-            font-weight: 600;
+            font-weight: 700;
             @include flex-center;
             cursor: pointer;
             a {
@@ -93,6 +92,18 @@ body {
                 width: $menu-height * .6;
                 height: $menu-height * .6;
                 border-radius: 20px;
+            }
+
+            .popupbox {
+                cursor: default;
+                >li {
+                    &:first-child {
+                        border-radius: 3px 3px 0 0;
+                    }
+                    &:last-child {
+                        border-radius: 0 0 3px 3px;
+                    }
+                }
             }
         }
     }

@@ -1,11 +1,8 @@
-@import '../common/util';
-@import '../common/reset';
-@import '../common/class';
+@import '../common/core';
 
 $menu-width: 220px;
 
 body {
-    width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
     display: flex;
@@ -21,7 +18,7 @@ body {
 	left: 0;
 	top: 0;
 	color: $default;
-	background-color: $font-color;
+	background-color: $light-black;
 	display: flex;
 	flex-direction: column;
 	z-index: 9;

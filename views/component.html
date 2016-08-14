@@ -11,7 +11,7 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
     <title>Component</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1470993821_690063.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1471096321_3989203.css">
     <link rel="stylesheet" href="../dist/stylesheets/component.min.css">
 </head>
 
@@ -53,20 +53,119 @@
                         夜喵
                     </span>
                 </div>
-                <ul class="popupbox width-md location-br flex-column list list-red">
-                    <li class="title bg-masstone white">账号信息</li>
-                    <li>退出登录</li>
+                <ul class="popupbox popupbox-dark-green border-radius masstone width-md location-br list list-md list-light-default fontSize-sm">
+                    <li class="title bg-dark-green white">My Profile</li>
+                    <li>Messages <span class="badge badge-bg-blue">12</span></li>
+                    <li>Settings</li>
+                    <li>Collections</li>
+                    <li>Logout</li>
                 </ul>
             </div>
         </div>
     </header>
     <div class="content">
+        <h2 class="blue">#Badge</h2>
+        <section id="Badge" class="mv-sm">
+            <button class="btn-default mh-sm">default <span class="badge">12</span></button>
+            <button class="btn-blue mh-sm">badge-blue<span class="badge badge-blue">2</span></button>
+            <button class="btn-green mh-sm">badge-bg-roseate<span class="badge badge-bg-roseate">99</span></button>
+        </section>
         <h2 class="blue">#List</h2>
         <section id="List" class="grid flex-start">
-            <ul class="list list-scale list-light-blue p-xlg grid-11 grid-24-sm mv-sm">
+            <ul class="list list-lg p-xlg grid-11 border-radius grid-24-sm mv-sm">
+                <li class="title text-ellipsis">
+                    .list.list-xlg + .border-radius
+                </li>
+                <li class="flex flex-v-center">
+                    <div class="list-header">
+                        <img src="../dist/images/1.png" alt="cat">
+                    </div>
+                    <div class="flex1 text-ellipsis">
+                        <div>supercell</div>
+                        <small>君の知らない物語</small>
+                    </div>
+                    <div class="list-footer">
+                        <div class="orange text-bold fontSize-lg">666</div>
+                        <i class="iconfont icon-caretdown"></i>
+                    </div>
+                </li>
+                <li class="flex flex-v-center">
+                    <div class="list-header">
+                        <img src="../dist/images/1.png" alt="cat">
+                    </div>
+                    <div class="flex1 text-ellipsis">
+                        <div>阿部真央</div>
+                        <small>嘘つき</small>
+                    </div>
+                    <div class="list-footer">
+                        <div class="orange text-bold fontSize-lg">999</div>
+                        <i class="iconfont icon-caretdown"></i>
+                    </div>
+                </li>
+                <li class="flex flex-v-center">
+                    <div class="list-header">
+                        <img src="../dist/images/1.png" alt="cat">
+                    </div>
+                    <div class="flex1 text-ellipsis">
+                        <div>山崎まさよし</div>
+                        <small>One more time, One more chance</small>
+                    </div>
+                    <div class="list-footer">
+                        <div class="orange text-bold fontSize-lg">998</div>
+                        <i class="iconfont icon-caretdown"></i>
+                    </div>
+                </li>
+                <li class="flex flex-v-center">
+                    <div class="list-header">
+                        <img src="../dist/images/1.png" alt="cat">
+                    </div>
+                    <div class="flex1 text-ellipsis">
+                        <div>风继续吹</div>
+                        <small>张国荣</small>
+                    </div>
+                    <div class="list-footer">
+                        <div class="orange text-bold fontSize-lg">233</div>
+                        <i class="iconfont icon-caretdown"></i>
+                    </div>
+                </li>
+                <li class="flex flex-v-center">
+                    <div class="list-header">
+                        <img src="../dist/images/1.png" alt="cat">
+                    </div>
+                    <div class="flex1 text-ellipsis">
+                        <div>ハンバート ハンバート</div>
+                        <small>日が落ちるまで</small>
+                    </div>
+                    <div class="list-footer">
+                        <div class="orange text-bold fontSize-lg">450</div>
+                        <i class="iconfont icon-caretdown"></i>
+                    </div>
+                </li>
+                <li class="flex flex-v-center">
+                    <div class="list-header">
+                        <img src="../dist/images/1.png" alt="cat">
+                    </div>
+                    <div class="flex1 text-ellipsis">
+                        <div>NightCat</div>
+                        <small>喵喵喵？</small>
+                    </div>
+                    <div class="list-footer">
+                        <div class="orange text-bold fontSize-lg">0</div>
+                        <i class="iconfont icon-caretdown"></i>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list list-scale list-light-blue p-xlg grid-11 grid-1-offset grid-24-sm mv-sm">
+                <li class="title p-lg text-ellipsis">
+                    .list-scale, .list-[light-blue] + [Collapse]
+                    <button id="lovest_song" class="btn-roseate pull-right p-sm">
+                        <i class="iconfont icon-heart"></i>
+                        我的最爱
+                    </button>
+                </li>
                 <li class="collapse-wrap">
-                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1">
-                        <div class="flex flex-v-center pv-sm">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1" class="p-lg" >
+                        <div class="flex flex-v-center">
                             <div class="list-header">
                                 <img src="../dist/images/1.png" alt="cat">
                             </div>
@@ -81,8 +180,8 @@
                         </div>
                     </div>
                     <div class="collapse text-nowrap">
-                        <ul class="p-lg fontSize-sm bg-light-blue white">
-                            <li class="text-preWrap">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
 あれが デネブ·アルタイル·ベガ
 那就是天津四、牛郎星、织女星
 
@@ -96,13 +195,14 @@
 终于找到了织女星
 
 だけどどこだろう彦星様
-可牛郎星又在哪里呢          </li>
+可牛郎星又在哪里呢         
+                            </li>
                         </ul>
                     </div>
                 </li>
                 <li class="collapse-wrap">
-                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1">
-                        <div class="flex flex-v-center pv-sm">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1" class="p-lg" >
+                        <div class="flex flex-v-center">
                             <div class="list-header">
                                 <img src="../dist/images/1.png" alt="cat">
                             </div>
@@ -111,14 +211,14 @@
                                 <small>嘘つき</small>
                             </div>
                             <div class="list-footer">
-                                <div class="orange text-bold fontSize-lg">998</div>
+                                <div class="orange text-bold fontSize-lg">999</div>
                                 <i class="iconfont icon-caretdown"></i>
                             </div>
                         </div>
                     </div>
                     <div class="collapse text-nowrap">
-                        <ul class="p-lg fontSize-sm bg-light-blue white">
-                            <li class="text-preWrap">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
 愛していると泣いたくせに 私を守ると言ったくせに
 明明曾相爱置泪 明明你说过会守护我
 
@@ -132,13 +232,14 @@
 难道从头到尾 只是我一个人在用力地拥抱而已
 
 嘘つき 嘘つき
-骗子 骗子                   </li>
+骗子 骗子                   
+                            </li>
                         </ul>
                     </div>
                 </li>
                 <li class="collapse-wrap">
-                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1">
-                        <div class="flex flex-v-center pv-sm">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1" class="p-lg" >
+                        <div class="flex flex-v-center">
                             <div class="list-header">
                                 <img src="../dist/images/1.png" alt="cat">
                             </div>
@@ -147,14 +248,14 @@
                                 <small>One more time, One more chance</small>
                             </div>
                             <div class="list-footer">
-                                <div class="orange text-bold fontSize-lg">369</div>
+                                <div class="orange text-bold fontSize-lg">998</div>
                                 <i class="iconfont icon-caretdown"></i>
                             </div>
                         </div>
                     </div>
                     <div class="collapse text-nowrap">
-                        <ul class="p-lg fontSize-sm bg-light-blue white">
-                            <li class="text-preWrap">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
 これ以上(いじょぅ)なにをうしなえば こころはゆるされるの
 要再失去多少东西 才能得到宽恕
 
@@ -168,8 +269,8 @@ One more time 季节啊 请不要变化
                     </div>
                 </li>
                 <li class="collapse-wrap">
-                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1">
-                        <div class="flex flex-v-center pv-sm">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1" class="p-lg" >
+                        <div class="flex flex-v-center">
                             <div class="list-header">
                                 <img src="../dist/images/1.png" alt="cat">
                             </div>
@@ -178,27 +279,28 @@ One more time 季节啊 请不要变化
                                 <small>张国荣</small>
                             </div>
                             <div class="list-footer">
-                                <div class="orange text-bold fontSize-lg">998</div>
+                                <div class="orange text-bold fontSize-lg">233</div>
                                 <i class="iconfont icon-caretdown"></i>
                             </div>
                         </div>
                     </div>
                     <div class="collapse text-nowrap">
-                        <ul class="p-lg fontSize-sm bg-light-blue white">
-                            <li class="text-preWrap">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
 让风继续吹 不忍远离
 
 心里极渴望 希望留下伴着你
 
 风继续吹 不忍远离
 
-心里亦有泪不愿流泪望着你    </li>
+心里亦有泪不愿流泪望着你
+                            </li>
                         </ul>
                     </div>
                 </li>
                 <li class="collapse-wrap">
-                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1">
-                        <div class="flex flex-v-center pv-sm">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1" class="p-lg" >
+                        <div class="flex flex-v-center">
                             <div class="list-header">
                                 <img src="../dist/images/1.png" alt="cat">
                             </div>
@@ -207,14 +309,14 @@ One more time 季节啊 请不要变化
                                 <small>日が落ちるまで</small>
                             </div>
                             <div class="list-footer">
-                                <div class="orange text-bold fontSize-lg">998</div>
+                                <div class="orange text-bold fontSize-lg">450</div>
                                 <i class="iconfont icon-caretdown"></i>
                             </div>
                         </div>
                     </div>
                     <div class="collapse text-nowrap">
-                        <ul class="p-lg fontSize-sm bg-light-blue white">
-                            <li class="text-preWrap">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
 写真（しゃしん）の中（なか）で君（きみ）はほほえんだ
 照片里的你却仍在微笑
 
@@ -228,13 +330,14 @@ One more time 季节啊 请不要变化
 你消失得无影无踪
 
 残（のこ）ったものは仆（ぼく）の影（かげ）だけ
-只有我的影子留下陪我      </li>
+只有我的影子留下陪我      
+                            </li>
                         </ul>
                     </div>
                 </li>
-                                <li class="collapse-wrap">
-                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1">
-                        <div class="flex flex-v-center pv-sm">
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list1" class="p-lg my-lovest" >
+                        <div class="flex flex-v-center">
                             <div class="list-header">
                                 <img src="../dist/images/1.png" alt="cat">
                             </div>
@@ -243,197 +346,407 @@ One more time 季节啊 请不要变化
                                 <small>喵喵喵？</small>
                             </div>
                             <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">0</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <img src="../dist/images/？？？.png" class="width-full p-lg" alt="">
+                    </div>
+                </li>
+            </ul>
+            <ul class="list list-light-green grid-11 grid-24-sm mv-sm">
+                <li class="title p-xlg text-ellipsis">
+                    .list-[light-green] + [Collapse]
+                </li>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list2" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>supercell</div>
+                                <small>君の知らない物語</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">666</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
+あれが デネブ·アルタイル·ベガ
+那就是天津四、牛郎星、织女星
+
+君は指差す夏の大三角
+你用手指出的夏日大三角
+
+覚えて空を見る
+要靠它们来认识星空
+
+やっと見つけた織姫様
+终于找到了织女星
+
+だけどどこだろう彦星様
+可牛郎星又在哪里呢         
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list2" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>阿部真央</div>
+                                <small>嘘つき</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">999</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
+愛していると泣いたくせに 私を守ると言ったくせに
+明明曾相爱置泪 明明你说过会守护我
+
+本当に側に居て欲しい時 貴方はいつも居なかった
+可我真正需要你在我身边的时候 你在何方呢
+
+愛していると泣いたくせに あの日の貴方は今どこに
+明明曾相爱置泪 可如今你又在何方
+
+そう言えば抱きしめるのは私ばかりだったね
+难道从头到尾 只是我一个人在用力地拥抱而已
+
+嘘つき 嘘つき
+骗子 骗子                   
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list2" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>山崎まさよし</div>
+                                <small>One more time, One more chance</small>
+                            </div>
+                            <div class="list-footer">
                                 <div class="orange text-bold fontSize-lg">998</div>
                                 <i class="iconfont icon-caretdown"></i>
                             </div>
                         </div>
                     </div>
                     <div class="collapse text-nowrap">
-                        <img src="../dist/images/？？？.png" class="width-full" alt="">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
+これ以上(いじょぅ)なにをうしなえば こころはゆるされるの
+要再失去多少东西 才能得到宽恕
+
+どれ程(ほど)の痛(いた)みならば もういちどきみにあえる
+要再经历多少痛苦 才能与你重逢
+
+One more time 季節(きせつ)よ うつろわないで
+One more time 季节啊 请不要变化
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list2" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>风继续吹</div>
+                                <small>张国荣</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">450</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
+让风继续吹 不忍远离
+
+心里极渴望 希望留下伴着你
+
+风继续吹 不忍远离
+
+心里亦有泪不愿流泪望着你
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list2" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>ハンバート ハンバート</div>
+                                <small>日が落ちるまで</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">233</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="p-xlg fontSize-sm white">
+                            <li class="text-preLine">
+写真（しゃしん）の中（なか）で君（きみ）はほほえんだ
+照片里的你却仍在微笑
+
+迹形（あとかた）もなく君（きみ）が消（き）えていく
+你消失得无影无踪
+
+写真（しゃしん）の中（なか）で君（きみ）はほほえんだ
+照片里的你却仍在微笑
+
+迹形（あとかた）もなく君（きみ）が消（き）えていく
+你消失得无影无踪
+
+残（のこ）ったものは仆（ぼく）の影（かげ）だけ
+只有我的影子留下陪我      
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list2" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>NightCat</div>
+                                <small>喵喵喵？</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">0</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <img src="../dist/images/？？？.png" class="width-full p-lg" alt="">
                     </div>
                 </li>
             </ul>
-            <ul class="list list-light-green grid-11 grid-1-offset grid-24-sm mv-sm">
-                <li>
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>supercell</div>
-                            <small>君の知らない物語</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">666</div>
-                            <i class="iconfont icon-caretdown"></i>
+            <ul class="list list-border-orange grid-11 grid-1-offset grid-24-sm mv-sm">
+                <li class="title p-xlg text-ellipsis">
+                    .list-[border-orange] + [Collapse]
+                </li>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list3" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>supercell</div>
+                                <small>君の知らない物語</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">666</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
                         </div>
                     </div>
-                </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>福原美穂</div>
-                            <small>LET IT OUT</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">233</div>
-                            <i class="iconfont icon-caretdown"></i>
-                        </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="p-xlg fontSize-sm">
+                            <li class="text-preLine">
+あれが デネブ·アルタイル·ベガ
+那就是天津四、牛郎星、织女星
+
+君は指差す夏の大三角
+你用手指出的夏日大三角
+
+覚えて空を見る
+要靠它们来认识星空
+
+やっと見つけた織姫様
+终于找到了织女星
+
+だけどどこだろう彦星様
+可牛郎星又在哪里呢         
+                            </li>
+                        </ul>
                     </div>
                 </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>阿部真央</div>
-                            <small>嘘つき</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">999</div>
-                            <i class="iconfont icon-caretdown"></i>
-                        </div>
-                    </div>
-                </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>Uptown Funk</div>
-                            <small>Mark Ronson</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">120</div>
-                            <i class="iconfont icon-caretdown"></i>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list3" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>阿部真央</div>
+                                <small>嘘つき</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">999</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
                         </div>
                     </div>
-                </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>RSP</div>
-                            <small>さくら ~あなたに出会えてよかった~</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">450</div>
-                            <i class="iconfont icon-caretdown"></i>
-                        </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="p-xlg fontSize-sm">
+                            <li class="text-preLine">
+愛していると泣いたくせに 私を守ると言ったくせに
+明明曾相爱置泪 明明你说过会守护我
+
+本当に側に居て欲しい時 貴方はいつも居なかった
+可我真正需要你在我身边的时候 你在何方呢
+
+愛していると泣いたくせに あの日の貴方は今どこに
+明明曾相爱置泪 可如今你又在何方
+
+そう言えば抱きしめるのは私ばかりだったね
+难道从头到尾 只是我一个人在用力地拥抱而已
+
+嘘つき 嘘つき
+骗子 骗子                   
+                            </li>
+                        </ul>
                     </div>
                 </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>NightCat</div>
-                            <small>喵喵喵？</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">0</div>
-                            <i class="iconfont icon-caretdown"></i>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list list-border-orange grid-11 grid-24-sm mv-sm">
-                <li>
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>supercell</div>
-                            <small>君の知らない物語</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">666</div>
-                            <i class="iconfont icon-caretdown"></i>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list3" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>山崎まさよし</div>
+                                <small>One more time, One more chance</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">998</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
                         </div>
                     </div>
-                </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>福原美穂</div>
-                            <small>LET IT OUT</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">233</div>
-                            <i class="iconfont icon-caretdown"></i>
-                        </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="p-xlg fontSize-sm">
+                            <li class="text-preLine">
+これ以上(いじょぅ)なにをうしなえば こころはゆるされるの
+要再失去多少东西 才能得到宽恕
+
+どれ程(ほど)の痛(いた)みならば もういちどきみにあえる
+要再经历多少痛苦 才能与你重逢
+
+One more time 季節(きせつ)よ うつろわないで
+One more time 季节啊 请不要变化
+                            </li>
+                        </ul>
                     </div>
                 </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>阿部真央</div>
-                            <small>嘘つき</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">999</div>
-                            <i class="iconfont icon-caretdown"></i>
-                        </div>
-                    </div>
-                </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>Uptown Funk</div>
-                            <small>Mark Ronson</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">120</div>
-                            <i class="iconfont icon-caretdown"></i>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list3" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>风继续吹</div>
+                                <small>张国荣</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">450</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
                         </div>
                     </div>
-                </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
-                        </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>RSP</div>
-                            <small>さくら ~あなたに出会えてよかった~</small>
-                        </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">450</div>
-                            <i class="iconfont icon-caretdown"></i>
-                        </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="p-xlg fontSize-sm">
+                            <li class="text-preLine">
+让风继续吹 不忍远离
+
+心里极渴望 希望留下伴着你
+
+风继续吹 不忍远离
+
+心里亦有泪不愿流泪望着你
+                            </li>
+                        </ul>
                     </div>
                 </li>
-                <li class="">
-                    <div class="flex flex-v-center pv-sm">
-                        <div class="list-header">
-                            <img src="../dist/images/1.png" alt="cat">
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list3" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>ハンバート ハンバート</div>
+                                <small>日が落ちるまで</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">233</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
                         </div>
-                        <div class="flex1 text-ellipsis">
-                            <div>NightCat</div>
-                            <small>喵喵喵？</small>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <ul class="p-xlg fontSize-sm">
+                            <li class="text-preLine">
+写真（しゃしん）の中（なか）で君（きみ）はほほえんだ
+照片里的你却仍在微笑
+
+迹形（あとかた）もなく君（きみ）が消（き）えていく
+你消失得无影无踪
+
+写真（しゃしん）の中（なか）で君（きみ）はほほえんだ
+照片里的你却仍在微笑
+
+迹形（あとかた）もなく君（きみ）が消（き）えていく
+你消失得无影无踪
+
+残（のこ）ったものは仆（ぼく）の影（かげ）だけ
+只有我的影子留下陪我      
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="collapse-wrap">
+                    <div data-component="collapse" data-triggle="click" data-collapseGroup="list3" class="p-lg" >
+                        <div class="flex flex-v-center">
+                            <div class="list-header">
+                                <img src="../dist/images/1.png" alt="cat">
+                            </div>
+                            <div class="flex1 text-ellipsis">
+                                <div>NightCat</div>
+                                <small>喵喵喵？</small>
+                            </div>
+                            <div class="list-footer">
+                                <div class="orange text-bold fontSize-lg">0</div>
+                                <i class="iconfont icon-caretdown"></i>
+                            </div>
                         </div>
-                        <div class="list-footer">
-                            <div class="orange text-bold fontSize-lg">0</div>
-                            <i class="iconfont icon-caretdown"></i>
-                        </div>
+                    </div>
+                    <div class="collapse text-nowrap">
+                        <img src="../dist/images/？？？.png" class="width-full p-lg" alt="">
                     </div>
                 </li>
             </ul>
@@ -442,7 +755,7 @@ One more time 季节啊 请不要变化
         <section id="popupbox">
             <div class="popupbox-wrap">
                 <button data-triggle="click" data-component="popupbox" data-target="drop-down-menu1">Click Me!</button>
-                <ul class="popupbox width-lg striped-light-default location-bl border-radius-xs" id="drop-down-menu1">
+                <ul class="popupbox width-lg striped location-bl border-radius-xs" id="drop-down-menu1">
                     <li class="p-md">One</li>
                     <li class="p-md">Two</li>
                     <li class="p-md">Three</li>
@@ -461,8 +774,8 @@ One more time 季节啊 请不要变化
             </div>
             <div class="popupbox-wrap">
                 <button data-triggle="click" data-component="popupbox" class="btn-roseate">Click Me!</button>
-                <div class="popupbox popupbox-roseate" data-location="left" data-dir="bottom">
-                    <table class="width-xxlg table-roseate striped-light-default location-br">
+                <div class="popupbox popupbox-roseate border-radius-sm location-bl">
+                    <table class="width-xxlg table-roseate border-radius-xs striped default2">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -497,7 +810,7 @@ One more time 季节啊 请不要变化
             </div>
             <div class="popupbox-wrap">
                 <button data-triggle="click" data-component="popupbox" class="btn-blue">Click Me!</button>
-                <ul class="popupbox border-radius-xs width-lg popupbox-blue location-tl list list-light-blue">
+                <ul class="popupbox border-radius-xs width-lg popupbox-blue location-tl list list-xs list-light-blue">
                     <li class="title">Title</li>
                     <li>One</li>
                     <li>Two</li>
@@ -539,14 +852,14 @@ One more time 季节啊 请不要变化
                 <button class="m-md btn-blue" id="closeCollapseSingle">单独控制</button>
             </div>
             <div class="collapse-group flex flex-wrap">
-                <ul class="grid-4 grid-6-md grid-24-xs p-md inline-flex-column">
+                <ul class="grid-5 grid-7-md grid-24-xs p-md inline-flex-column">
                     <li class="collapse-wrap bg-pink">
                         <div data-component="collapse" data-triggle="click" data-collapseGroup="group1" class="white p-md">
                             <i class="iconfont fontSize-xxlg icon-looksone vertical-sub"></i> Pink
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是组1的</li>
                             </ul>
@@ -558,7 +871,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是组1的</li>
                             </ul>
@@ -570,7 +883,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是组1的</li>
                             </ul>
@@ -582,7 +895,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是组2的</li>
                             </ul>
@@ -594,7 +907,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是组2的</li>
                             </ul>
@@ -606,21 +919,21 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是组2的</li>
                             </ul>
                         </div>
                     </li>
                 </ul>
-                <ul class="grid-4 grid-6-md grid-24-xs p-md inline-flex-column">
+                <ul class="grid-5 grid-7-md grid-24-xs p-md inline-flex-column">
                     <li class="collapse-wrap bg-pink">
                         <div data-component="collapse" data-triggle="click" class="white p-md">
                             <i class="iconfont fontSize-xxlg icon-looksone vertical-sub"></i> Pink
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是独立的</li>
                             </ul>
@@ -632,7 +945,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是独立的</li>
                             </ul>
@@ -640,7 +953,7 @@ One more time 季节啊 请不要变化
                     </li>
                     <li class="collapse-wrap bg-blue open">
                         <div class="collapse text-nowrap" id="blueCat" data-collapseGroup="group1" data-component="collapse">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是组1的</li>
                                 <li>我只能通过JS控制(=ˋωˊ=)</li>
@@ -653,7 +966,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是组2的</li>
                             </ul>
@@ -665,7 +978,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是独立的</li>
                             </ul>
@@ -677,21 +990,21 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>我是独立的</li>
                             </ul>
                         </div>
                     </li>
                 </ul>
-                <ul class="grid-4 grid-6-md grid-24-xs p-md inline-flex-column">
+                <ul class="grid-5 grid-7-md grid-24-xs p-md inline-flex-column">
                     <li class="collapse-wrap bg-pink">
                         <div data-component="collapse" data-triggle="hover" class="white p-md">
                             <i class="iconfont fontSize-xxlg icon-looksone vertical-sub"></i> Pink
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>Hover Miao OwO</li>
                             </ul>
@@ -703,7 +1016,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>Hover Miao OwO</li>
                             </ul>
@@ -715,7 +1028,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>Hover Miao OwO</li>
                             </ul>
@@ -727,7 +1040,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>Hover Miao OwO</li>
                             </ul>
@@ -739,7 +1052,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>Hover Miao OwO</li>
                             </ul>
@@ -751,7 +1064,7 @@ One more time 季节啊 请不要变化
                             <i class="iconfont icon-caretright pull-right"></i>
                         </div>
                         <div class="collapse text-nowrap">
-                            <ul class="p-lg fontSize-sm white">
+                            <ul class="p-xlg fontSize-sm white">
                                 <li>Hi</li>
                                 <li>Hover Miao OwO</li>
                             </ul>

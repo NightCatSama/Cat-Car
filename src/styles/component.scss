@@ -1,5 +1,16 @@
-@import './layout/menu-content-column';
 @import './components/core';
+@import './layout/menu-content-column';
+
+/*
+ * 注册颜色主题
+ */
+$popupbox-theme: pink roseate blue default2 yellow masstone dark-green;
+$badge-theme: bg-roseate blue bg-blue;
+$list-theme: light-default light-blue light-green border-orange;
+$table-theme: roseate;
+$themes: (popupbox: $popupbox-theme, badge: $badge-theme, list: $list-theme, table: $table-theme);
+@include theme($themes);
+
 .menu {
     .dropdown-menu {
         margin-top: 2px;
@@ -21,6 +32,12 @@
         >div {
             display: inline-block;
             margin: 20px;
+        }
+        
+        @each $color in $popupbox-theme {
+            .popupbox-#{$color} {
+                @extend %popupbox-#{$color}
+            }
         }
     }
     #collapse {

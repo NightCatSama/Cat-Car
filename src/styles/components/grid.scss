@@ -34,10 +34,11 @@ $columns: 24;
 	@for $i from 0 through $columns {
         .grid-#{$i}#{$size} {
         	@if($i == 0) {
-        		display: none;
+        		flex-basis: 0;
+                overflow: hidden;
         	}
         	@else {
-                display: flex;
+                // display: flex;
 				flex-basis: $i * (100% / 24);
                 width: 0;
 	            margin-left: 0;

@@ -1,0 +1,15 @@
+@import '../common/util';
+
+.badge {
+	border-radius: 10px;
+	font-size: 12px;
+	margin-left: 5px;
+	padding: 0 5px;
+	color: $white;
+	font-family: Simsun;
+	background-color: $light-black;
+
+	&:empty {
+		display: none;
+	}
+}

@@ -1,0 +1,63 @@
+/*
+ * 生成主题主题
+ */
+@each $name,
+$color,
+$lightPercent in $colors {
+    %popupbox-#{$name} {
+        color: $color;
+        border-color: $color;
+        .title {
+            background-color: $color;
+            color: $white;
+        }
+    }
+
+    %badge-#{$name} {
+		color: $color;
+		background-color: $white;
+    }
+
+    %badge-bg-#{$name} {
+		color: $white;
+		background-color: $color;
+    }
+
+    %list-#{$name} >li {
+        &:not(.title):hover,
+        &.open,
+        &.active {
+            color: $white;
+            background-color: $color;
+            i,
+            small {
+                color: $white;
+            }
+        }
+        &.title {
+            // color: $color;
+        }
+    }
+    %list-border-#{$name} {
+        >li {
+            &:not(.title):hover,
+            &.open,
+            &.active {
+                border-left: 5px solid $color;
+            }
+        }
+    }
+
+    %table-#{$name} {
+    	th {
+    		background-color: $color;
+    	}
+        tr:hover {
+            $hover:  $lightPercent / 2;
+			background-color: lighten($color, $hover)!important;
+		}
+        tr.active {
+            background-color: lighten($color, 5%)!important;
+        }
+    }
+}

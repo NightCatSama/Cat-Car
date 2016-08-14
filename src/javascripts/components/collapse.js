@@ -41,7 +41,7 @@ class Collapse {
 		this.status = this.wrap.classList.contains('open');
 		this.wrap.slideCollapse = this.target.slideCollapse = this.slideCollapse.bind(this);
 		this.btn && (this.btn.slideCollapse = this.slideCollapse.bind(this));
-		this.h = this.status ? window.getComputedStyle(this.target)['height'] : this.getHeightInHide();
+		this.refreshHeight();
 		this.isCollapasing = false;
 		this.initEvent(triggleType);
 	}
@@ -58,11 +58,10 @@ class Collapse {
 			this.target.style.height = '';
 		});
 	}
-	getHeightInHide() {
+	refreshHeight() {
 		this.target.classList.add('show');
-		var h = window.getComputedStyle(this.target)['height'];
+		this.h = window.getComputedStyle(this.target)['height'];
 		this.target.classList.remove('show');
-		return h;
 	}
 	slideCollapse(type) {
 		if (this.status) {
@@ -76,6 +75,7 @@ class Collapse {
 			this.status = false;
 		} else {
 			if(type && type === 'close') return false;
+			this.target.classList.contains('collapsing') || this.refreshHeight();
 			this.group && closeGroup(this.group, 'close');
 			this.isCollapasing = true;
 			this.wrap.classList.add('open');

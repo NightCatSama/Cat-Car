@@ -20,19 +20,11 @@ $zIndex: 10;
     left: 0;
     z-index: $zIndex;
 
-    @each $name,
-    $color in $colors {
-        &.popupbox-#{$name} {
-            color: $color;
-            border-color: $color;
-            .title {
-                font-weight: 600;
-                background-color: $color;
-                color: $white;
-                border: none;
-            }
-        }
+    .title {
+        font-weight: 600;
+        border: none;
     }
+
     &::before {
         content: '';
         position: absolute;
@@ -137,13 +129,5 @@ $zIndex: 10;
     }
     &.show {
         display: block;
-    }
-
-    @each $name, $num in $size {
-        &.border-radius-#{$name} {
-            table {
-                border-radius: $num * 5px;
-            }
-        }
     }
 }

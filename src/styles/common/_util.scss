@@ -1,10 +1,10 @@
-/*
- * Util.scss
- * ------------------------
- * 此处只有公共变量 @Mixin @Function
- * 不生产直接样式
- * (=ˋωˊ=)
- */
+//
+// Util.scss
+// ------------------------
+// 此处只有公共变量 @Mixin @Function
+// 不生产直接样式
+// (=ˋωˊ=)
+//
 
 //**************************************************************
 //        漂亮的颜色
@@ -36,7 +36,7 @@ $light-default: #c1c1c1;
 $default: #95a5a6;
 $default2: #333742;
 $dark-default: #7f8c8d;
-$font-color: #282c36;
+$font-color: #334455;
 $font-color1: $default2;
 $bg-color: $light-gray;
 $bg-color1: #f2f5f9;
@@ -44,7 +44,7 @@ $bg-color2: #f0f0f0;
 $light-shadow: 0 0 3px 1px rgba(0, 0, 0, .36);
 $shadow: 0 0 5px 3px rgba(0, 0, 0, .16);
 $dark-shadow: 0 0 5px 3px rgba(0, 0, 0, .16);
-$colors: (roseate $roseate 25%),
+$colors: (roseate $roseate 50%),
 (masstone $masstone 30%),
 (light-default $light-default 10%),
 (default $default 20%),
@@ -58,6 +58,7 @@ $colors: (roseate $roseate 25%),
 (yellow $yellow 25%),
 (light-green $light-green 20%),
 (green $green 20%),
+(dark-green $dark-green 20%),
 (light-black $light-black 40%),
 (black $black 50%),
 (white $white 0),
@@ -78,6 +79,21 @@ $percents: (full 100%),
 $locations: left right top bottom;
 $multilocations: (l t), (l b), (r t), (r b), (t l), (t r), (b l), (b r);
 $directions: vertical horizontal;
+
+//**************************************************************
+//        生成主题类 Params[componentname, colors]
+//**************************************************************
+@mixin theme($themes) {
+    @each $name, $all in $themes {
+        @each $color in $all {
+            .#{$name}-#{$color} {
+                @extend %#{$name}-#{$color}
+            }
+        }
+    }
+}
+
+
 //**************************************************************
 //        垂直居中
 //**************************************************************
@@ -185,3 +201,4 @@ $directions: vertical horizontal;
         @content;
     }
 }
+
