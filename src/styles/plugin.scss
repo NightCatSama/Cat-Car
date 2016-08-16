@@ -13,7 +13,7 @@ $themes: (table: $table-theme);
                 counter-increment: index;
                 width: 14px;
                 height: 14px;
-                margin: 0 2px;
+                margin: 2px;
                 opacity: .8;
                 border: none;
                 box-shadow: none;
@@ -34,6 +34,12 @@ $themes: (table: $table-theme);
                 &.carousel-pagination-bullet-active::before {
                     background-color: $red;
                 }
+            }
+        }
+        .carousel-vertical {
+            .diy-class {
+                bottom: 0;
+                right: 10px;
             }
         }
     }

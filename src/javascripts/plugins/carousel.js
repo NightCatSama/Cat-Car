@@ -41,15 +41,9 @@ class Carousel {
 	initSize() {
 		if (this.width) {
 			this.elem.style.width = typeof this.width === 'number' ? (this.width + 'px') : this.width;
-			this.width = typeof this.width === 'number' ? this.width : this.elem.offsetWidth;
-		} else {
-			this.width = this.elem.offsetWidth;
 		}
 		if (this.height) {
 			this.elem.style.height = typeof this.height === 'number' ? (this.height + 'px') : this.height;
-			this.height = typeof this.height === 'number' ? this.height : this.elem.offsetHeight;
-		} else {
-			this.height = this.elem.offsetHeight;
 		}
 		this.itemSize = (100 / this.count) + '%';
 		Array.from(this.items, (elem) => elem.style['flex-basis'] = this.itemSize);
@@ -68,14 +62,13 @@ class Carousel {
 		this.setTransitionTime(this.slideTime);
 	}
 	eventControl(elem, type, fn, ...arg){
-		console.log(arg);
 		fn = fn.bind(this, ...arg);
 		elem.addEventListener(type, fn, false);
 		this.events.push(() => elem.removeEventListener(type, fn, false));
 	}
 	bindEvent() {
-		this.prevBtn && this.eventControl(this.prevBtn, 'click', this.slide, 1, 'click');
-		this.nextBtn && this.eventControl(this.nextBtn, 'click', this.slide, -1, 'click');
+		this.prevBtn && this.eventControl(this.prevBtn, 'click', this.slidePrev);
+		this.nextBtn && this.eventControl(this.nextBtn, 'click', this.slideNext);
 		this.eventControl(this.wrap, 'transitionend', this.slideEnd);
 		if (this.autoTimer) {
 			this.timer = setInterval(() => this.slide(this.reverse ? 1 : -1, 'auto'), this.autoTimer);
@@ -108,6 +101,13 @@ class Carousel {
 		this.isScroll = true;
 		this.setPosition();
 		this.pagination && this.setPaginationActive();
+		this.autoHide && this.autoHideBtn();
+	}
+	slidePrev() {
+		this.slide(1, 'click');
+	}
+	slideNext() {
+		this.slide(-1, 'click');
 	}
 	slideTo(index) {
 		index = (index + this.total) % this.total;
@@ -135,7 +135,6 @@ class Carousel {
 			this.elem.offsetWidth;
 			this.setTransitionTime(this.slideTime);
 		}
-		this.autoHide && this.autoHideBtn();
 		this.isScroll = false;
 	}
 	setPosition() {
@@ -205,7 +204,6 @@ class Carousel {
 	}
 }
 
-// 入口文件
 const entry = (selector, option) => {
 	let elems = document.querySelectorAll(selector);
 	if (elems.length === 1) return createCarousel(elems[0]);
