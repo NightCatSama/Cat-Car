@@ -20,6 +20,7 @@ class Carousel {
 		Object.assign(this, _default, option);
 		this.itemIndex = this.isLoop ? (this.count + this.index) : this.index;
 		this.isScroll = false;
+		this.events = [];
 		this.init(elem);
 	}
 	init(elem) {
@@ -66,19 +67,29 @@ class Carousel {
 		this.setPosition();
 		this.setTransitionTime(this.slideTime);
 	}
+	eventControl(elem, type, fn, ...arg){
+		console.log(arg);
+		fn = fn.bind(this, ...arg);
+		elem.addEventListener(type, fn, false);
+		this.events.push(() => elem.removeEventListener(type, fn, false));
+	}
 	bindEvent() {
-		this.slidePrev = this.slide.bind(this, 1, 'click');
-		this.slideNext = this.slide.bind(this, -1, 'click');
-		this.prevBtn && this.prevBtn.addEventListener('click', this.slidePrev, false);
-		this.nextBtn && this.nextBtn.addEventListener('click', this.slideNext, false);
-		this.wrap.addEventListener('transitionend', () => this.slideEnd(), false);
-		this.wrap.addEventListener('webkitTransitionEnd', () => this.slideEnd(), false);
+		this.prevBtn && this.eventControl(this.prevBtn, 'click', this.slide, 1, 'click');
+		this.nextBtn && this.eventControl(this.nextBtn, 'click', this.slide, -1, 'click');
+		this.eventControl(this.wrap, 'transitionend', this.slideEnd);
 		if (this.autoTimer) {
 			this.timer = setInterval(() => this.slide(this.reverse ? 1 : -1, 'auto'), this.autoTimer);
 		}
 	}
+	destoryEvent() {
+		Array.from(this.events, (fn) => fn());
+	}
+	destory() {
+		this.destoryEvent();
+		this.elem.parentNode.removeChild(this.elem);
+	}
 	slide(dir, type) {
-		if (!dir || 　this.isScroll) {
+		if (!dir || this.isScroll) {
 			return false;
 		}
 		if (type === 'click') {
@@ -119,9 +130,6 @@ class Carousel {
 				this.itemIndex = this.count;
 				this.index = 0;
 			}
-			// this.pos = status === 1 ? -this.total : -this.count;
-			// this.itemIndex = status === 1 ? this.total : this.count;
-			// this.index = status === 1 ? (this.total - 1) : 0;
 			this.setTransitionTime(0);
 			this.setPosition();
 			this.elem.offsetWidth;
@@ -173,6 +181,9 @@ class Carousel {
 		}
 		this.pages.innerHTML = str;
 		this.elem.appendChild(this.pages);
+
+		this.eventControl(this.pages, 'click', this.clickPagination);
+
 		this.curBullet = this.pages.children[this.index];
 		this.curBullet.classList.add('carousel-pagination-bullet-active');
 	}
@@ -180,6 +191,17 @@ class Carousel {
 		this.curBullet.classList.remove('carousel-pagination-bullet-active');
 		this.curBullet = this.pages.children[(this.index + this.total) % this.total];
 		this.curBullet.classList.add('carousel-pagination-bullet-active');
+	}
+	clickPagination(e) {
+		let target = e.target;
+		if(!target.classList.contains('carousel-pagination-bullet')) return false;
+		target = target.previousSibling;
+        let i = 0;
+        while (target) {
+            target = target.previousSibling;
+            i++;
+        }
+        this.slideTo(i);
 	}
 }
 
@@ -198,18 +220,4 @@ const entry = (selector, option) => {
 	}
 }
 
-let README = `
-	count: 1, //
-	slideTime: 0.25,
-	autoTimer: 1000,
-	reverse: true,
-	width: undefined,
-	height: undefined,
-	direction: 'horizontal',
-	isLoop: false,
-	autoHide: 'hide',
-	prevBtn: undefined,
-	nextBtn: undefined,
-	index: 0,
-`
 export default entry;

@@ -8,7 +8,9 @@ import Carousel from './plugins/carousel';
 
 require(['../../../domReady'], function (domReady) {
 	domReady(() => {
-		let example1 = Carousel('#example1');
+		let example1 = Carousel('#example1', {
+			direction: 'vertical',
+		});
 		let example2 = Carousel('#example2', {
 			count: 3,
 			slideTime: 0.25,
@@ -41,7 +43,7 @@ require(['../../../domReady'], function (domReady) {
 			isLoop: true,
 			pagination: false,
 		});
-
+		window.a = example1;
 		document.body.classList.remove('hide');
 	})
 });

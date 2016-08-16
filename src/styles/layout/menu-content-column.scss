@@ -49,11 +49,12 @@ body {
                 color: $yellow;
             }
 
-            &.dropdown-menu {
-                margin-top: 2px;
+            .dropdown-menu {
                 width: 200px;
                 color: $default;
                 background-color: $light-black;
+                box-shadow: inset 3px 0 0 0 $orange;
+
                 li {
                     padding: 8px 10px 8px 20px;
                     &:hover {
