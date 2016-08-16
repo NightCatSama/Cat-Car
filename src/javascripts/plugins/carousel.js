@@ -3,7 +3,7 @@
 let _default = {
 	count: 1,
 	slideTime: 0.25,
-	autoTimer: 1000,
+	autoTimer: 0,
 	reverse: true,
 	width: undefined,
 	height: undefined,
