@@ -4112,6 +4112,7 @@ body.off .menu-btn
 
     content: counter(index);
     -webkit-user-select: none;
+       -moz-user-select: none;
             user-select: none;
 
     color: #fffffb;
