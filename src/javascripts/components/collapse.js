@@ -34,7 +34,7 @@ class Collapse {
 			const target = btn.getAttribute('data-target');
 			this.target = target ? document.getElementById(target) : btn.nextElementSibling;
 		}
-		const triggleType = btn.getAttribute('data-triggle') || 'click';
+		const triggerType = btn.getAttribute('data-trigger') || 'click';
 		this.group = btn.getAttribute('data-collapseGroup');
 		this.group && pushGroups(this.group, this);
 		this.wrap = btn.parentElement;
@@ -43,7 +43,7 @@ class Collapse {
 		this.btn && (this.btn.slideCollapse = this.slideCollapse.bind(this));
 		this.refreshHeight();
 		this.isCollapasing = false;
-		this.initEvent(triggleType);
+		this.initEvent(triggerType);
 	}
 	initEvent(type) {
 		if (type === 'click') {

@@ -1,0 +1,125 @@
+@import '../common/util';
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    .carousel-wrap {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        .carousel-slide {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .carousel-prevBtn,
+    .carousel-nextBtn {
+        &::after {
+            position: absolute;
+            top: 50%;
+            font-size: 40px;
+            font-family: serif;
+            transform: translate3d(0, -50%, 0);
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        &.hide {
+            display: none;
+        }
+    }
+    .carousel-prevBtn::after {
+        content: '<';
+        left: 10px;
+    }
+    .carousel-nextBtn::after {
+        content: '>';
+        right: 10px;
+    }
+    &.carousel-vertical {
+        .carousel-wrap {
+            flex-direction: column;
+            .carousel-prevBtn {
+                position: absolute;
+            }
+            .carousel-nextBtn {
+                position: absolute;
+            }
+        }
+    }
+}
+
+
+/*
+ * 分页器
+ */
+
+.carousel-pagination {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.carousel-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 3px;
+    opacity: .4;
+    background-color: #000;
+    border: 1px solid #FFF;
+}
+
+.carousel-pagination-bullet-active {
+    background-color: #007AFF;
+}
+
+
+/*
+ * 垂直or水平区分样式
+ */
+
+.carousel-horizontal {
+    flex-direction: row;
+}
+
+.carousel-horizontal .carousel-wrap {
+    height: 100%;
+}
+
+.carousel-horizontal div[role="button"] {
+    height: 100%;
+    width: 25px;
+}
+
+.carousel-horizontal .carousel-content {
+    white-space: nowrap;
+}
+
+.carousel-horizontal .carousel-item {
+    height: 100%;
+}
+
+.carousel-vertical .carousel-item {
+    width: 100%;
+    letter-spacing: 0;
+}
+
+.carousel-horizontal .carousel-pagination {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+}
+
+.carousel-vertical .carousel-pagination {
+    height: 100%;
+    width: 20px;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+}

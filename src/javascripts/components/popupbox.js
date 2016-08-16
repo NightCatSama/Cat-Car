@@ -4,7 +4,7 @@ var elem = null;
 class DropdownMenu {
 	constructor(btn) {
 		this.btn = btn;
-		let type = btn.getAttribute('data-triggle') || 'click';
+		let type = btn.getAttribute('data-trigger') || 'click';
 		let target = btn.getAttribute('data-target');
 		this.target = target ? document.getElementById(target) : btn.nextElementSibling;
 		this.btn.slideDropdownMenu = this.target.slideDropdownMenu = this.slide.bind(this);

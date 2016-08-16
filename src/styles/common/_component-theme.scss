@@ -52,12 +52,12 @@ $lightPercent in $colors {
     	th {
     		background-color: $color;
     	}
-        tr:hover {
-            $hover:  $lightPercent / 2;
-			background-color: lighten($color, $hover)!important;
-		}
         tr.active {
-            background-color: lighten($color, 5%)!important;
+            $active: $lightPercent / 2;
+            background-color: lighten($color, $active)!important;
+        }
+        tr:hover {
+            background-color: lighten($color, $lightPercent)!important;
         }
     }
 }

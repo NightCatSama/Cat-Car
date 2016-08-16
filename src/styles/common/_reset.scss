@@ -114,6 +114,15 @@ blockquote {
     border-left: 4px solid $blue;
 }
 
+code {
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: $light-black;
+    color: $white;
+    font-family: Consolas, Monaco, Droid, Sans, Mono, Source, Code, Pro, Menlo, Lucida, Sans, Type, Writer, Ubuntu, Mono;
+    border-radius: 5px;
+}
+
 small {
     color: $gray;
 }

@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>空白页</title>
-	<style>
-	</style>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>空白页</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1471096321_3989203.css">
+    <link rel="stylesheet" href="dist/stylesheets/components/collapse.min.css">
+    <link rel="stylesheet" type="text/css" href="./dist/stylesheets/index.min.css">
 </head>
+
 <body>
-	<a href="./views/globeCss.html">喵？O。O</a>
+    <header class="menu">
+        <div class="menu-header">
+            <img src="../dist/images/1.png" alt=""> NightCat
+        </div>
+        <ul class="menu-content ">
+            <li class="active">
+                <i class="iconfont icon-star"></i>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <i class="iconfont icon-asterisk"></i>
+                <a href="#">Blog</a>
+            </li>
+            <li>
+                <i class="iconfont icon-notifications"></i>
+                <a href="#">FAQ</a>
+            </li>
+            <li>
+                <i class="iconfont icon-bookmark"></i>
+                <a href="#">Jobs</a>
+            </li>
+            <li class="collapse-wrap">
+                <div data-component="collapse" data-trigger="click" data-collapseGroup="menu">
+                    <i class="iconfont icon-tag"></i> Other
+                    <i class="iconfont icon-caretright pull-right"></i>
+                </div>
+                <ul class="collapse text-nowrap">
+                    <ul class="fontSize-sm">
+                        <li><a href="#">Contact Me</a></li>
+                        <li><a href="#">Information</a></li>
+                    </ul>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <div class="content grid flex-start">
+        <ul class="grid-12 grid-18-md grid-24-sm list list-lg list-border-blue" id="progress-list">
+            <li class="title bg-blue white">
+                开发进度
+            </li>
+            <li class="flex flex-v-center" data-url="./views/globeCss.html">
+                <div class="list-header">
+                    <img src="dist/images/1.png" alt="">
+                </div>
+                <div class="flex1">Globe CSS</div>
+                <div class="list-footer">优化中</div>
+            </li>
+            <li class="flex flex-v-center" data-url="./views/component.html">
+                <div class="list-header">
+                    <img src="dist/images/1.png" alt="">
+                </div>
+                <div class="flex1">Component</div>
+                <div class="list-footer">开发中</div>
+            </li>
+            <li class="flex flex-v-center" data-url="./views/plugin.html">
+                <div class="list-header">
+                    <img src="dist/images/1.png" alt="">
+                </div>
+                <div class="flex1">Plugin</div>
+                <div class="list-footer">未开发</div>
+            </li>
+        </ul>
+    </div>
+    <footer></footer>
+    <script data-main="./dist/javascripts/index.js" src="../require.js"></script>
 </body>
 </html>

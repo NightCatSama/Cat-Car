@@ -1,0 +1,1 @@
+import collapses from '../components/collapse';

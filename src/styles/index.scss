@@ -1,0 +1,16 @@
+// @import './components/core';
+@import './layout/menu-content';
+@import './components/list';
+@import './components/grid';
+
+$list: blue light-blue border-blue;
+$themes: (list: $list);
+@include theme($themes);
+
+$table-theme: blue;
+$themes: (table: $table-theme);
+@include theme($themes);
+
+.content {
+	padding: 20px;
+}

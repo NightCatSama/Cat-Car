@@ -6,25 +6,10 @@
  */
 $popupbox-theme: pink roseate blue default2 yellow masstone dark-green;
 $badge-theme: bg-roseate blue bg-blue;
-$list-theme: light-default light-blue light-green border-orange;
+$list-theme: dark-blue light-blue light-green border-orange;
 $table-theme: roseate;
 $themes: (popupbox: $popupbox-theme, badge: $badge-theme, list: $list-theme, table: $table-theme);
 @include theme($themes);
-
-.menu {
-    .dropdown-menu {
-        margin-top: 2px;
-        width: 200px;
-        color: $default;
-        background-color: $light-black;
-        li {
-            padding: 8px 10px 8px 20px;
-            &:hover {
-                color: $white;
-            }
-        }
-    }
-}
 
 .content {
     padding: 20px;
@@ -33,7 +18,7 @@ $themes: (popupbox: $popupbox-theme, badge: $badge-theme, list: $list-theme, tab
             display: inline-block;
             margin: 20px;
         }
-        
+
         @each $color in $popupbox-theme {
             .popupbox-#{$color} {
                 @extend %popupbox-#{$color}
@@ -49,63 +34,6 @@ $themes: (popupbox: $popupbox-theme, badge: $badge-theme, list: $list-theme, tab
             padding-bottom: 10px;
             &:not(:last-child) {
                 border-right: 1px solid $gray;
-            }
-        }
-    }
-}
-
-@include max-screen(768px) {
-    .menu {
-        .menu-content {
-            position: absolute;
-            padding-left: 0;
-            width: 100%;
-            background-color: $white;
-            top: 100%;
-            left: 0;
-            height: 0;
-            overflow: hidden;
-            transition: height .3s;
-
-            >div {
-                flex: 1;
-                padding: 0 5px;
-                font-size: 12px;
-                white-space: nowrap;
-
-                &.active {
-                    color: $default;
-                    position: relative;
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 2px;
-                        background-color: $blue;
-                    }
-                }
-
-                &:hover {
-                    color: inherit;
-                }
-            }
-
-            &.on {
-                height: 50px;
-            }
-        }
-        .menu-footer {
-            padding-right: 0;
-            justify-content: flex-start;
-            white-space: nowrap;
-            .search,.username {
-                display: none;
-            }
-            img {
-                margin-right: 0;
             }
         }
     }

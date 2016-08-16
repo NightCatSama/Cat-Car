@@ -1,0 +1,40 @@
+@import './components/core';
+@import './layout/menu-content';
+@import './plugins/carousel';
+$table-theme: blue;
+$themes: (table: $table-theme);
+@include theme($themes);
+.content {
+    padding: 20px;
+    #Carousel {
+        .diy-class {
+            bottom: 10px;
+            li {
+                counter-increment: index;
+                width: 14px;
+                height: 14px;
+                margin: 0 2px;
+                opacity: .8;
+                border: none;
+                box-shadow: none;
+                cursor: pointer;
+                background-color: $tr;
+
+                &::before {
+                    content: counter(index);
+                    background-color: $black;
+                    font-size: 12px;
+                    width: 14px;
+                    height: 14px;
+                    color: $white;
+                    border-radius: 50%;
+                    user-select: none;
+                    @include flex-center;
+                }
+                &.carousel-pagination-bullet-active::before {
+                    background-color: $red;
+                }
+            }
+        }
+    }
+}
