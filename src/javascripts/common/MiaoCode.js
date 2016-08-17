@@ -1,3 +1,11 @@
+/*
+ * DOMReady
+ * 事件委托绑定
+ * 判断是否移动端
+ * 序列化GET参数
+ * 滑轮滚动兼容
+ */
+
 let Miao = {};
 
 /*
@@ -6,7 +14,7 @@ let Miao = {};
 Miao._readyEventQueue = [];
 Miao.DOMready = (fn) => {
 	if (document.readyState === "complete") {
-	  	fn();
+		fn();
 	} else {
 		Miao._readyEventQueue.push(fn);
 		document.onreadystatechange = Miao.triggerDOMReady;
@@ -48,7 +56,10 @@ Miao.onEvent = (elem, type, selector, fn, isOne) => {
 /*
  * 判断是否移动端
  */
-Miao.isPhone = () => !!navigator.userAgent.match(/AppleWebKit.*Mobile.*/);
+Miao.isPhone = () => {
+	let matchedREG = /iphone|android|symbianos|windows\sphone/g;
+	return matchedREG.test(window.navigator.userAgent.toLocaleLowerCase());
+}
 
 /*
  * 序列化url.query
@@ -62,6 +73,21 @@ Miao.getGetData = function() {
 		obj[pair[0]] = decodeURI(pair[1]);
 	});
 	return obj;
+}
+
+/*
+ * 滑轮滚动兼容
+ */
+Miao.onMouseWheel = (elem, fn, upCase = false) => {
+	let type = "mousewheel";
+	if (document.mozHidden !== undefined) {
+		type = "DOMMouseScroll";
+	}
+	let handle = (e) => {
+		e.delta = (e.wheelDelta) ? e.wheelDelta / 120 : -(e.detail || 0) / 3;
+		fn(e);
+	}
+	elem.addEventListener(type, handle, upCase);
 }
 
 export default Miao;

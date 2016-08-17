@@ -73,6 +73,8 @@ $bullet-size: 7px;
 .carousel-pagination {
     position: absolute;
     @include flex-center;
+    padding: 0;
+    margin: 0;
     list-style: none;
 
     .carousel-pagination-bullet {
@@ -98,14 +100,12 @@ $bullet-size: 7px;
 .carousel-horizontal .carousel-pagination {
     width: 100%;
     left: 0;
-    bottom: 0;
-    height: 20px;
+    bottom: 5px;
 }
 
 .carousel-vertical .carousel-pagination {
     height: 100%;
-    width: 20px;
-    right: 0;
+    right: 5px;
     top: 0;
     flex-direction: column;
 }

@@ -14,7 +14,12 @@ let _default = {
 	nextBtn: undefined,
 	index: 0,
 	pagination: true,
+	mousewheel: false,
+	preSlideFn: null,
+	startSlideFn: null,
+	callback: null,
 }
+
 class Carousel {
 	constructor(elem, option) {
 		Object.assign(this, _default, option);
@@ -61,7 +66,10 @@ class Carousel {
 		this.setPosition();
 		this.setTransitionTime(this.slideTime);
 	}
-	eventControl(elem, type, fn, ...arg){
+	eventControl(elem, type, fn, ...arg) {
+		if (type === "mousewheel" && document.mozHidden !== undefined) {
+			type = "DOMMouseScroll";
+		}
 		fn = fn.bind(this, ...arg);
 		elem.addEventListener(type, fn, false);
 		this.events.push(() => elem.removeEventListener(type, fn, false));
@@ -69,13 +77,16 @@ class Carousel {
 	bindEvent() {
 		this.prevBtn && this.eventControl(this.prevBtn, 'click', this.slidePrev);
 		this.nextBtn && this.eventControl(this.nextBtn, 'click', this.slideNext);
+		this.mousewheel && this.eventControl(this.wrap, 'mousewheel', this.scrollSlide);
 		this.eventControl(this.wrap, 'transitionend', this.slideEnd);
 		if (this.autoTimer) {
 			this.timer = setInterval(() => this.slide(this.reverse ? 1 : -1, 'auto'), this.autoTimer);
 		}
 	}
 	destoryEvent() {
-		Array.from(this.events, (fn) => fn());
+		while(this.events.length){
+			(this.events.shift())();
+		}
 	}
 	destory() {
 		this.destoryEvent();
@@ -83,6 +94,9 @@ class Carousel {
 	}
 	slide(dir, type) {
 		if (!dir || this.isScroll) {
+			return false;
+		}
+		if (this.preSlideFn && !this.preSlideFn(this)) {
 			return false;
 		}
 		if (type === 'click') {
@@ -102,12 +116,37 @@ class Carousel {
 		this.setPosition();
 		this.pagination && this.setPaginationActive();
 		this.autoHide && this.autoHideBtn();
+		this.startSlideFn && this.startSlideFn(this);
 	}
 	slidePrev() {
 		this.slide(1, 'click');
 	}
 	slideNext() {
 		this.slide(-1, 'click');
+	}
+	scrollSlide(e) {
+		let delta, type = e.type;
+		if (type == 'DOMMouseScroll' || type == 'mousewheel') {
+			delta = (e.wheelDelta) ? e.wheelDelta / 120 : -(e.detail || 0) / 3;
+		}
+		if (this.isScroll || this.isLoop || (!this.isLoop && ((this.itemIndex !== this.total - this.count && delta < 0) || (this.itemIndex !== 0 && delta > 0)))) {
+			e.preventDefault();
+		}
+		if (+this.mousewheel === 1) return this.slide(delta, 'click');
+		else {
+			if (this.mousewheelTimer) {
+				this.curDelta += delta;
+				if (this.curDelta === delta * +(this.mousewheel)) {
+					this.slide(delta, 'click');
+				}
+			} else {
+				this.curDelta = delta;
+				this.mousewheelTimer = setTimeout(() => {
+					this.curDelta = 0;
+					this.mousewheelTimer = null;
+				}, 300);
+			}
+		}
 	}
 	slideTo(index) {
 		index = (index + this.total) % this.total;
@@ -120,12 +159,11 @@ class Carousel {
 		}
 		let status = this.isEnd();
 		if (this.isLoop && status) {
-			if(status === 1){
+			if (status === 1) {
 				this.pos = -this.total;
 				this.itemIndex = this.total;
 				this.index = this.total - 1;
-			}
-			else {
+			} else {
 				this.pos = -this.count;
 				this.itemIndex = this.count;
 				this.index = 0;
@@ -136,6 +174,7 @@ class Carousel {
 			this.setTransitionTime(this.slideTime);
 		}
 		this.isScroll = false;
+		this.callback && this.callback(this);
 	}
 	setPosition() {
 		let moveDistance = this.pos * (100 / this.count);
@@ -193,19 +232,20 @@ class Carousel {
 	}
 	clickPagination(e) {
 		let target = e.target;
-		if(!target.classList.contains('carousel-pagination-bullet')) return false;
+		if (!target.classList.contains('carousel-pagination-bullet')) return false;
 		target = target.previousSibling;
-        let i = 0;
-        while (target) {
-            target = target.previousSibling;
-            i++;
-        }
-        this.slideTo(i);
+		let i = 0;
+		while (target) {
+			target = target.previousSibling;
+			i++;
+		}
+		this.slideTo(i);
 	}
 }
 
 const entry = (selector, option) => {
 	let elems = document.querySelectorAll(selector);
+	console.log(selector);
 	if (elems.length === 1) return createCarousel(elems[0]);
 	return Array.from(elems, createCarousel);
 
