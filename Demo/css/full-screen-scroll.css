@@ -1,0 +1,92 @@
+    body {
+        overflow-x: hidden;
+    }
+    #demo {
+        left: 0;
+        right: 0;
+    }
+
+    #demo div.carousel-slide {
+        background-size: cover;
+    }
+
+    #demo div.carousel-slide:nth-of-type(1) {
+        background-image: url(../imgs/1.jpg);
+    }
+
+    #demo div.carousel-slide:nth-of-type(2) {
+        background-image: url(../imgs/2.png);
+    }
+
+    #demo div.carousel-slide:nth-of-type(3) {
+        background-image: url(../imgs/3.png);
+    }
+
+    #demo div.carousel-slide:nth-of-type(4) {
+        background-image: url(../imgs/4.jpg);
+    }
+
+    .my-class .carousel-pagination-bullet {
+    	width: 12px;
+    	height: 12px;
+    }
+
+    #demo .n-btn::after {
+        font-size: 70px;
+        opacity: .8;
+        animation: bottom 3s infinite;
+    }
+
+    #demo .p-btn::after {
+        font-size: 70px;
+        opacity: .8;
+        animation: top 3s infinite;
+    }
+
+    @keyframes top {
+        0 {
+            top: 0px;
+        }
+        50% {
+            top: 10px;
+        }
+        100% {
+        	top: 0px;
+        }
+    }
+
+    @-webkit-keyframes top {
+        0 {
+            top: 0px;
+        }
+        50% {
+            top: 10px;
+        }
+        100% {
+        	top: 0px;
+        }
+    }
+
+    @keyframes bottom {
+        0 {
+            bottom: 0px;
+        }
+        50% {
+            bottom: 10px;
+        }
+        100% {
+        	bottom: 0px;
+        }
+    }
+
+    @-webkit-keyframes bottom {
+        0 {
+            bottom: 0px;
+        }
+        50% {
+            bottom: 10px;
+        }
+        100% {
+        	bottom: 0px;
+        }
+    }

@@ -10,7 +10,7 @@ window.Miao = Miao;
 const loadCarousel = () => {
 	let example1 = Carousel('#example1');
 	let example1_2 = Carousel('#example1-2', {
-		direction: 'vertical',
+		direction: 'vertical'
 	});
 	let example2 = Carousel('#example2', {
 		count: 3,
@@ -26,31 +26,35 @@ const loadCarousel = () => {
 	let example3 = Carousel('#example3', {
 		count: 1,
 		slideTime: 0.35,
-		autoTimer: 5000,
+		autoTimer: 0,
 		reverse: false,
+		width: '45%',
 		height: 300,
 		direction: 'horizontal',
-		isLoop: true,
+		isLoop: false,
 		autoHide: 'hide',
 		index: 0,
 		pagination: 'diy-class',
+		mousewheel: 1,
 	});
 	let example3_2 = Carousel('#example3-2', {
 		count: 1,
 		slideTime: 0.35,
-		autoTimer: 5000,
+		autoTimer: 0,
 		reverse: false,
+		width: '45%',
 		height: 300,
 		direction: 'vertical',
-		isLoop: true,
+		isLoop: false,
 		autoHide: 'hide',
 		index: 0,
 		pagination: 'diy-class',
+		mousewheel: 3,
 	});
 	let example4 = Carousel('#example4', {
 		count: 1,
 		slideTime: 2,
-		autoTimer: 1000,
+		autoTimer: 2000,
 		reverse: false,
 		direction: 'vertical',
 		isLoop: true,

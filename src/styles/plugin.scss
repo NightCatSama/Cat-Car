@@ -1,6 +1,7 @@
 @import './components/core';
 @import './layout/menu-content';
 @import './plugins/carousel';
+@import './plugins/pagination';
 $table-theme: blue;
 $themes: (table: $table-theme);
 @include theme($themes);
