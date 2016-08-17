@@ -29,7 +29,7 @@ gulp.task('browser-sync', ['sass', 'scripts', 'images'], function() {
     gulp.watch("src/javascripts/**/*.js", ['scripts']);
     gulp.watch("src/images/**/*.png", ['images']);
     gulp.watch("**/*.html").on("change", reload);
-    // gulp.watch("dist/stylesheets/*.css").on("change", reload);
+    gulp.watch("dist/javascripts/**/*.js").on("change", reload);
 });
 
 // 样式处理
@@ -100,7 +100,7 @@ gulp.task('scripts', function() {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/javascripts'))
     // .pipe(notify({ message: 'Javascript编译成功！' }))
-    .pipe(reload({stream: true}))
+    // .pipe(reload({stream: true}))
 });
 
 // 图片压缩
