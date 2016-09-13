@@ -5,6 +5,8 @@ requirejs.config({
 import 'layout/menu-content';
 import Miao from './common/MiaoCode';
 import Carousel from './plugins/carousel';
+import { scrollToTop, scrollToElem, scrollTo } from './plugins/smooth-scroll';
+
 window.Miao = Miao;
 
 const loadCarousel = () => {
@@ -64,3 +66,11 @@ const loadCarousel = () => {
 }
 
 Miao.DOMready(loadCarousel);
+
+
+/*
+ * 平滑滚动
+ */
+document.getElementById('gotoTop').addEventListener('click', scrollToTop, false);
+document.getElementById('gotoLoop').addEventListener('click', () => scrollToElem(document.getElementById('Loop')), false);
+document.getElementById('goto500').addEventListener('click', () => scrollTo(500), false);
