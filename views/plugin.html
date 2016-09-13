@@ -103,7 +103,7 @@
                     <div class="carousel-nextBtn white"></div>
                 </div>
             </div>
-            <h4 class="blue mt-lg">Loop</h4>
+            <h4 class="blue mt-lg" id="Loop">Loop</h4>
             <div class="carousel-container height-lg" id="example2">
                 <div class="carousel-wrap">
                     <div class="carousel-slide flex flex-center white fontSize-xxxlg bg-blue">Slide 1</div>
@@ -152,6 +152,22 @@
             <h4 class="blue mt-lg">
                 <a href="../Demo/fullScreenScroll.html">全屏滚动</a>
             </h4>
+        </section>
+        <hr>
+        <h1 class="blue">#smooth-scroll</h1>
+        <section id="Back-Top">
+            <code class="text-preLine block"><span class="blue">Function</span>
+            {
+                <span class="green width-md ml-md inline-block">scrollToTop</span>: <span class="ml-sm fontSize-sm masstone">滚动到顶部 @params [number: 1000 滚动时间]</span>
+                <span class="green width-md ml-md inline-block">startSlideFn</span>: <span class="ml-sm fontSize-sm masstone">滚动到元素 @params (object, [number: 1000 滚动时间])</span>
+                <span class="green width-md ml-md inline-block">callback</span>: <span class="ml-sm fontSize-sm masstone">滚动到具体位置 @params (number, [number: 1000 滚动时间])</span>
+            }
+            </code>
+            <div class="mv-sm">
+                <button class="btn-blue" id="gotoTop">滚动到顶部</button>
+                <button class="btn-green" id="gotoLoop">滚动到#Loop</button>
+                <button class="btn-orange" id="goto500">滚动到500位置</button>
+            </div>
         </section>
     </div>
     <footer></footer>

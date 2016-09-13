@@ -11,11 +11,9 @@ let btnAll = document.getElementById('closeCollapseAll');
 let btn = document.getElementById('closeCollapseSingle');
 let blueCat = document.getElementById('blueCat');
 let menuContentBtn = document.querySelector('.menu-content-btn');
-let lovestBtn = document.getElementById('lovest_song');
 
 btn1.addEventListener('click', () => closeGroup('group1'));
 btn2.addEventListener('click',() => closeGroup('group2'));
 btnAll.addEventListener('click', () => slideAll('close'));
 btn.addEventListener('click', blueCat.slideCollapse);
 menuContentBtn.addEventListener('click', () => document.querySelector('.menu-content').classList.toggle('on'));
-lovestBtn.addEventListener('click', () => document.querySelector('.my-lovest').slideCollapse('open'));

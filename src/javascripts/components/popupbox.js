@@ -12,7 +12,10 @@ class DropdownMenu {
 	}
 	initEvent(type) {
 		if(type === 'click'){
-			this.btn.addEventListener('click', () => this.slide(), false);
+			this.btn.addEventListener('click', (e) => {
+				e.stopPropagation();
+				this.slide()
+			}, false);
 		}
 		else {
 			this.btn.addEventListener('mouseover', () => this.slide('show'), false);
@@ -34,6 +37,15 @@ class DropdownMenu {
 	}
 }
 
+document.addEventListener('click', (e) => {
+	if(!elem) return false;
+	let trigger = e.target;
+	if(!elem.contains(trigger)) {
+		elem.classList.remove('show');
+		elem = null;
+	}
+});
+
 const refresh = () => {
 	let btns = document.querySelectorAll('[data-component="popupbox"]');
 	return Array.from(btns, (btn) => new DropdownMenu(btn));
@@ -41,5 +53,6 @@ const refresh = () => {
 
 export {
 	refresh,
+	DropdownMenu,
 }
 export default refresh();
