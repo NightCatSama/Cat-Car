@@ -2,9 +2,7 @@
 
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
-const Quad_easeIn = (t, b, c, d) => {
-	return c * ((t = t / d - 1) * t * t + 1) + b;
-}
+const Quad_easeIn = (t, b, c, d) => c * ((t = t / d - 1) * t * t + 1) + b;
 
 //  滚动到具体位置
 const scrollTo = (end, time = 1000) => {
