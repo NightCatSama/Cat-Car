@@ -1,8 +1,10 @@
 @import './components/core';
 @import './layout/menu-content';
 @import './plugins/carousel';
+
 $table-theme: blue;
-$themes: (table: $table-theme);
+$list-theme: light-sliver;
+$themes: (table: $table-theme, list: $list-theme);
 @include theme($themes);
 .content {
     padding: 20px;
@@ -42,5 +44,9 @@ $themes: (table: $table-theme);
                 right: 10px;
             }
         }
+    }
+
+    .collapse-wrap {
+        // background-color: $white;
     }
 }

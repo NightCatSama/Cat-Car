@@ -245,7 +245,6 @@ class Carousel {
 
 const entry = (selector, option) => {
 	let elems = document.querySelectorAll(selector);
-	console.log(selector);
 	if (elems.length === 1) return createCarousel(elems[0]);
 	return Array.from(elems, createCarousel);
 
