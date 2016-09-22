@@ -60,7 +60,6 @@ body {
 	.menu-content {
 		padding: 20px 0;
 		>li {
-			padding: 8px 20px;
 			font-weight: 600;
 			cursor: pointer;
 			transition: background-color .5s;
@@ -84,6 +83,11 @@ body {
 			a {
 				text-decoration: none;
 				color: inherit;
+			}
+
+			>a {
+				padding: 8px 20px;
+				display: block;
 			}
 
 			li {
