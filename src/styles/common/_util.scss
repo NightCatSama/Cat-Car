@@ -25,11 +25,13 @@ $green: #2ecc71;
 $light-green: #52be7f;
 $dark-green: #27ae60;
 $brown: #843900;
-$light-black: #282c36;
+$sliver: #8492A6;
+$light-sliver: #99A9BF;
+$light-black: #324057;
 $black: #130c0e;
 $white: #fffffb;
-$light-gray: #eef2f4;
-$gray: #77787b;
+$light-gray: #E5E9F2;
+$gray: #D3DCE6;
 $masstone: #798f9a;
 $tr: transparent;
 $light-default: #c1c1c1;
@@ -59,6 +61,8 @@ $colors: (roseate $roseate 30%),
 (light-green $light-green 20%),
 (green $green 20%),
 (dark-green $dark-green 20%),
+(light-sliver $light-sliver 40%),
+(sliver $sliver 50%),
 (light-black $light-black 40%),
 (black $black 50%),
 (white $white 0),

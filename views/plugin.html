@@ -22,16 +22,19 @@
         </div>
         <ul class="menu-content">
             <li>
-                <i class="iconfont icon-star"></i>
-                <a href="globeCss.html">Globe CSS</a>
+                <a class="reset-a" href="globeCss.html">
+                    <i class="iconfont icon-star"></i> Globe CSS
+                </a>
             </li>
             <li>
-                <i class="iconfont icon-asterisk"></i>
-                <a href="component.html">Component</a>
+                <a class="reset-a" href="component.html">
+                    <i class="iconfont icon-asterisk"></i>Component
+                </a>
             </li>
             <li class="active">
-                <i class="iconfont icon-bookmark"></i>
-                <a href="plugin.html">Plugin</a>
+                <a class="reset-a" href="plugin.html">
+                    <i class="iconfont icon-bookmark"></i>Plugin
+                </a>
             </li>
             <li class="collapse-wrap">
                 <div data-component="collapse" data-trigger="click" data-target="collapseID" data-collapseGroup="menu">
@@ -40,9 +43,9 @@
                 </div>
                 <div id="collapseID" class="collapse text-nowrap">
                     <ul class="fontSize-sm">
-                        <li><a href="#">Menu-Content</a></li>
-                        <li><a href="#">Menu-Content-column</a></li>
-                        <li><a href="#">I have no idea</a></li>
+                        <li><a class="reset-a" href="#">Menu-Content</a></li>
+                        <li><a class="reset-a" href="#">Menu-Content-column</a></li>
+                        <li><a class="reset-a" href="#">I have no idea</a></li>
                     </ul>
                 </div>
             </li>
@@ -51,9 +54,8 @@
     <div class="content">
         <h1 class="blue">#Carousel</h1>
         <section id="Carousel">
-            <code class="text-preLine block"><span class="blue">Option</span>
-            {
-            <span class="green width-md ml-md inline-block">count</span>: <span class="yellow">1</span>,<span class="ml-sm fontSize-sm masstone">一栏能显示Slide个数[number]</span>
+            <code class="text-preLine block"><span class="blue">Option</span> {
+                <span class="green width-md ml-md inline-block">count</span>: <span class="yellow">1</span>,<span class="ml-sm fontSize-sm masstone">一栏能显示Slide个数[number]</span>
                 <span class="green width-md ml-md inline-block">slideTime</span>: <span class="yellow">0.25</span>,<span class="ml-sm fontSize-sm masstone">滑动速度[number]</span>
                 <span class="green width-md ml-md inline-block">autoTimer</span>: <span class="yellow">0</span>,<span class="ml-sm fontSize-sm masstone">自动滑动时间[number]</span>
                 <span class="green width-md ml-md inline-block">reverse</span>: <span class="yellow">false</span>,<span class="ml-sm fontSize-sm masstone">自动滑动方向(默认前进方向)[boolean]</span>
@@ -69,17 +71,14 @@
                 <span class="green width-md ml-md inline-block">mousewheel</span>: <span class="yellow">false</span>,<span class="ml-sm fontSize-sm masstone">是否启用滚轮控制[boolean, number触发滑动值300ms内]</span>
                 <span class="green width-md ml-md inline-block">preSlideFn</span>: <span class="yellow">null</span>,<span class="ml-sm fontSize-sm masstone">滑动前判断 @params this [function @return boolean]</span>
                 <span class="green width-md ml-md inline-block">startSlideFn</span>: <span class="yellow">null</span>,<span class="ml-sm fontSize-sm masstone">滑动开始时回调 @params this [function]</span>
-                <span class="green width-md ml-md inline-block">callback</span>: <span class="yellow">null</span>,<span class="ml-sm fontSize-sm masstone">滑动结束时回调 @params this [function]</span>
-            }
-            <span class="blue width-sm inline-block">Function</span>
-            {
+                <span class="green width-md ml-md inline-block">callback</span>: <span class="yellow">null</span>,<span class="ml-sm fontSize-sm masstone">滑动结束时回调 @params this [function]</span> }
+                <span class="blue width-sm inline-block">Function</span> {
                 <span class="green width-md ml-md inline-block">slidePrev</span>: <span class="fontSize-sm masstone">后退一页</span>
                 <span class="green width-md ml-md inline-block">slideNext</span>: <span class="fontSize-sm masstone">前进一页</span>
                 <span class="green width-md ml-md inline-block">slideTo</span>: <span class="fontSize-sm masstone">跳转到索引 @params [number]</span>
                 <span class="green width-md ml-md inline-block">destoryEvent</span>: <span class="fontSize-sm masstone">解除所有绑定事件</span>
-                <span class="green width-md ml-md inline-block">destory</span>: <span class="fontSize-sm masstone">解除所有绑定事件并移除</span>
-            }
-            </code>
+                <span class="green width-md ml-md inline-block">destory</span>: <span class="fontSize-sm masstone">解除所有绑定事件并移除</span> }
+                </code>
             <h4 class="blue mt-lg">Default</h4>
             <div class="flex-column">
                 <div class="carousel-container height-lg" id="example1">
@@ -140,8 +139,8 @@
             <h4 class="blue mt-lg">Scroll News</h4>
             <div class="carousel-container height-xs bg-default white flex" id="example4">
                 <span class="width-sm flex flex-center red">
-                    News:
-                </span>
+                        News:
+                    </span>
                 <div class="carousel-wrap pl-sm">
                     <div class="carousel-slide flex flex-v-center fontSize-sm">夜喵中了一百万</div>
                     <div class="carousel-slide flex flex-v-center fontSize-sm">夜喵中了一千万</div>
@@ -150,27 +149,28 @@
                 </div>
             </div>
             <h4 class="blue mt-lg">
-                <a href="../Demo/fullScreenScroll.html">全屏滚动</a>
-            </h4>
+                        <a href="../Demo/fullScreenScroll.html">全屏滚动</a>
+                    </h4>
         </section>
-        <hr>
+        </li>
         <h1 class="blue">#smooth-scroll</h1>
         <section id="Back-Top">
-            <code class="text-preLine block"><span class="blue">Function</span>
-            {
+            <code class="text-preLine block"><span class="blue">Function</span> {
                 <span class="green width-md ml-md inline-block">scrollToTop</span>: <span class="ml-sm fontSize-sm masstone">滚动到顶部 @params [number: 1000 滚动时间]</span>
                 <span class="green width-md ml-md inline-block">startSlideFn</span>: <span class="ml-sm fontSize-sm masstone">滚动到元素 @params (object, [number: 1000 滚动时间])</span>
-                <span class="green width-md ml-md inline-block">scrollTo</span>: <span class="ml-sm fontSize-sm masstone">滚动到具体位置 @params (number, [number: 1000 滚动时间])</span>
-            }
-            </code>
-            <div class="mv-sm">
+                <span class="green width-md ml-md inline-block">scrollTo</span>: <span class="ml-sm fontSize-sm masstone">滚动到具体位置 @params (number, [number: 1000 滚动时间])</span> }
+                </code>
+            <div class="mt-sm">
                 <button class="btn-blue" id="gotoTop">滚动到顶部</button>
                 <button class="btn-green" id="gotoLoop">滚动到#Loop</button>
                 <button class="btn-orange" id="goto500">滚动到500位置</button>
             </div>
         </section>
+        </li>
+        </ul>
     </div>
     <footer></footer>
     <script data-main="../dist/javascripts/plugin.js" src="../require.js"></script>
 </body>
+
 </html>
