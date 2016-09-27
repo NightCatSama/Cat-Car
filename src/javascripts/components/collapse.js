@@ -24,7 +24,7 @@ const slideAll = (type) => {
 }
 
 class Collapse {
-	constructor(btn) {
+	constructor(btn, option) {
 		if(btn.classList.contains('collapse')) {
 			this.btn = null;
 			this.target = btn;
